@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Municipal Admin Dashboard - GreenSweep</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+/* ── Reset & base ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: 'Public Sans', sans-serif; }
+
+/* ── divide-y children ─────────────────────────── */
+.divide-y > * + * { border-top-width: 1px; border-top-style: solid; }
+.divide-y.dark\:divide-\[\#2a4535\] > * + * { border-color: #2a4535; }
+
+/* ── space-y children ─────────────────────────── */
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-8 > * + * { margin-top: 2rem; }
+
+/* ── no-scrollbar ──────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── card-hover (already in source style block) ── */
+.card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-hover:hover { transform: translateY(-4px); }
+
+/* ── form-input reset ──────────────────────────── */
+.form-input { -webkit-appearance: none; appearance: none; }
+
+/* ── group hover helper ────────────────────────── */
+.group:hover .group-hover\:bg-primary { background-color: #0df269; }
+.group:hover .group-hover\:text-background-dark { color: #102217; }
+.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+
+/* ── brightness hover ──────────────────────────── */
+.hover\:brightness-95:hover { filter: brightness(0.95); }
+.hover\:brightness-105:hover { filter: brightness(1.05); }
+
+/* ── border-b-\[3px\] ─────────────────────────── */
+.border-b-\[3px\] { border-bottom-width: 3px; }
+
+/* ── shadow-primary\/20 ──────────────────────── */
+.shadow-primary\/20 { box-shadow: 0 10px 15px -3px rgba(13,242,105,0.2); }
+.shadow-lg.shadow-primary\/20 { box-shadow: 0 10px 15px -3px rgba(13,242,105,0.2), 0 4px 6px -4px rgba(13,242,105,0.1); }
+
+/* ── flex items adjustments for layout-container ─ */
+.layout-container { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.layout-content-container { display: flex; flex-direction: column; }
+
+/* ── @container query fallback (using plain flex) ─ */
+\@container { container-type: inline-size; }
+
+
+/* ── Generated utility CSS ──────────────────────── */
+.-translate-y-1\/2 { transform: translateY(-50%); }
+.absolute { position: absolute; }
+.antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.bg-\[\#608a71\] { background-color: #608a71; }
+.bg-amber-100 { background-color: #fef3c7; }
+.bg-amber-500 { background-color: #f59e0b; }
+.bg-background-light { background-color: #f5f8f7; }
+.bg-background-light\/30 { background-color: rgba(245,248,247,0.3); }
+.bg-blue-500 { background-color: #3b82f6; }
+.bg-center { background-position: center; }
+.bg-cover { background-size: cover; }
+.bg-primary { background-color: #0df269; }
+.bg-primary\/10 { background-color: rgba(13,242,105,0.1); }
+.bg-primary\/20 { background-color: rgba(13,242,105,0.2); }
+.bg-red-100 { background-color: #fee2e2; }
+.bg-red-500 { background-color: #ef4444; }
+.bg-white { background-color: #ffffff; }
+.border { border-width: 1px; }
+.border-2 { border-width: 2px; }
+.border-\[\#dbe6df\] { border-color: #dbe6df; }
+.border-b { border-bottom-width: 1px; }
+.border-collapse { border-collapse: collapse; }
+.border-none { border-style: none; }
+.border-primary { border-color: #0df269; }
+.border-r { border-right-width: 1px; }
+.border-t { border-top-width: 1px; }
+.border-white { border-color: #ffffff; }
+.divide-y { --tw-divide-y-reverse: 0; }
+.flex { display: flex; }
+.flex-1 { flex: 1 1 0%; }
+.flex-col { flex-direction: column; }
+.flex-shrink-0 { flex-shrink: 0; }
+.font-black { font-weight: 900; }
+.font-bold { font-weight: 700; }
+.font-display { font-family: "Public Sans", sans-serif; }
+.font-medium { font-weight: 500; }
+.font-normal { font-weight: 400; }
+.gap-1 { gap: 0.25rem; }
+.gap-10 { gap: 2.5rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.h-16 { height: 4rem; }
+.h-1\/2 { height: 50%; }
+.h-1\/3 { height: 33.333333%; }
+.h-1\/4 { height: 25%; }
+.h-2 { height: 0.5rem; }
+.h-2\/3 { height: 66.666667%; }
+.h-32 { height: 8rem; }
+.h-3\/4 { height: 75%; }
+.h-64 { height: 16rem; }
+.h-full { height: 100%; }
+.h-screen { height: 100vh; }
+.hidden { display: none; }
+.hover\:bg-background-light:hover { background-color: #f5f8f7; }
+.hover\:bg-background-light\/50:hover { background-color: rgba(245,248,247,0.5); }
+.hover\:bg-primary:hover { background-color: #0df269; }
+.hover\:brightness-95:hover { filter: brightness(0.95); }
+.hover\:underline:hover { text-decoration: underline; }
+.inset-0 { inset: 0; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.leading-none { line-height: 1; }
+.leading-tight { line-height: 1.25; }
+.left-3 { left: 0.75rem; }
+.max-w-6xl { max-width: 72rem; }
+.max-w-md { max-width: 28rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mix-blend-multiply { mix-blend-mode: multiply; }
+.mt-2 { margin-top: 0.5rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-x-auto { overflow-x: auto; }
+.overflow-y-auto { overflow-y: auto; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.pb-10 { padding-bottom: 2.5rem; }
+.pl-10 { padding-left: 2.5rem; }
+.pl-2 { padding-left: 0.5rem; }
+.pr-4 { padding-right: 1rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+.relative { position: relative; }
+.right-2 { right: 0.5rem; }
+.rounded { border-radius: 0.25rem; }
+.rounded-full { border-radius: 9999px; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-t-sm { border-top-left-radius: 0.125rem; border-top-right-radius: 0.125rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0/0.05); }
+.size-10 { width: 2.5rem; height: 2.5rem; }
+.space-y-8 { --tw-space-y-reverse: 0; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-\[10px\] { color: 10px; }
+.text-\[\#078829\] { color: #078829; }
+.text-\[\#111814\] { color: #111814; }
+.text-\[\#608a71\] { color: #608a71; }
+.text-amber-500 { color: #f59e0b; }
+.text-amber-600 { color: #d97706; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-left { text-align: left; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-primary { color: #0df269; }
+.text-red-600 { color: #dc2626; }
+.text-red-700 { color: #b91c1c; }
+.text-right { text-align: right; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.top-1\/2 { top: 50%; }
+.top-2 { top: 0.5rem; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.transition-colors { transition-property: color,background-color,border-color,text-decoration-color,fill,stroke; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.uppercase { text-transform: uppercase; }
+.w-2 { width: 0.5rem; }
+.w-64 { width: 16rem; }
+.w-full { width: 100%; }
+
+.dark .dark\:bg-\[\#102217\] { background-color: #102217; }
+.dark .dark\:bg-\[\#1a2e22\] { background-color: #1a2e22; }
+.dark .dark\:bg-\[\#2a4535\] { background-color: #2a4535; }
+.dark .dark\:bg-amber-900\/30 { background-color: rgba(120,53,15,0.3); }
+.dark .dark\:bg-background-dark { background-color: #102217; }
+.dark .dark\:bg-red-900\/30 { background-color: rgba(127,29,29,0.3); }
+.dark .dark\:border-\[\#1a2e22\] { border-color: #1a2e22; }
+.dark .dark\:border-\[\#2a4535\] { border-color: #2a4535; }
+.dark .dark\:hover\:bg-\[\#2a4535\]:hover { background-color: #2a4535; }
+.dark .dark\:text-\[\#dbe6df\] { color: #dbe6df; }
+.dark .dark\:text-amber-400 { color: #fbbf24; }
+.dark .dark\:text-primary\/70 { color: rgba(13,242,105,0.7); }
+.dark .dark\:text-red-400 { color: #f87171; }
+.dark .dark\:text-white { color: #ffffff; }
+
+@media (min-width: 640px) {
+  .sm\:block { display: block; }
+}
+
+@media (min-width: 768px) {
+  .md\:block { display: block; }
+  .md\:flex { display: flex; }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lg\:p-10 { padding: 2.5rem; }
+}</style></head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111814] dark:text-white antialiased">
+<nav class="hidden md:flex items-center gap-10">
+<a href="Home.html">Home</a>
+<a href="Awarness.html">Awareness</a>
+<a href="report.html">Report</a>
+<a href="Dashboard.html">Dashboard</a>
+<a href="Admin.html">Admin</a>
+</nav>
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-[#1a2e22] border-r border-[#dbe6df] dark:border-[#2a4535] hidden md:flex flex-col">
+<div class="flex flex-col h-full p-4 justify-between">
+<div class="flex flex-col gap-8">
+<!-- Logo Area -->
+<div class="flex gap-3 items-center px-2">
+<div class="bg-primary rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#111814]">eco</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111814] dark:text-white text-base font-bold leading-tight">GreenSweep</h1>
+<p class="text-[#608a71] dark:text-primary/70 text-xs font-normal">Municipal Authority</p>
+</div>
+<!-- Dashboard (current page) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-[#111814] font-medium" href="Dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="report.html">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm">Reports</span>
+</a>
+<!-- Analytics -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="Dashboard.html">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm">Analytics</span>
+</a>
+<!-- Map View -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="report.html">
+<span class="material-symbols-outlined">map</span>
+<span class="text-sm">Map View</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="Admin.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+</div>
+<!-- Action Button -->
+<button class="w-full flex items-center justify-center gap-2 rounded-lg py-3 bg-primary text-[#111814] text-sm font-bold tracking-wide hover:brightness-95 transition-all">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+<span>New Report</span>
+</button>
+</div>
+</div></aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- TopNavBar Component -->
+<header class="h-16 flex-shrink-0 bg-white dark:bg-[#1a2e22] border-b border-[#dbe6df] dark:border-[#2a4535] px-6 flex items-center justify-between">
+<div class="flex items-center gap-6 flex-1">
+<h2 class="text-[#111814] dark:text-white text-lg font-bold tracking-tight md:block hidden">Admin Dashboard</h2>
+<div class="max-w-md w-full relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#608a71] text-xl">search</span>
+<input class="w-full bg-background-light dark:bg-[#2a4535] border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 text-[#111814] dark:text-white placeholder-[#608a71]" placeholder="Search reports, users, or locations..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 pr-4 border-r border-[#dbe6df] dark:border-[#2a4535]">
+<button class="p-2 rounded-lg bg-background-light dark:bg-[#2a4535] text-[#111814] dark:text-[#dbe6df] relative">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-[#1a2e22]"></span>
+</button>
+<button class="p-2 rounded-lg bg-background-light dark:bg-[#2a4535] text-[#111814] dark:text-[#dbe6df]">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+</button>
+</div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-[#111814] dark:text-white leading-none">Sarah Jenkins</p>
+<p class="text-xs text-[#608a71] dark:text-primary/70">Chief Inspector</p>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Professional portrait of a municipal administrator" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcbjGy5BgaYMZVkcMr5P55JijQwr1xiHkZc5aJKBOCfD7nKR0VDAR9SBHji3nLVTpfhwZ1i0FynTQF0lOBEGQCHBavH31BvPtKLOcjqMofHfchoXHgc4ENzgIOg29xnJhtbVZJiKfa8_z107hkIvH4yIVSbqqtZw5vqVLug9eYfAXf8N0RdcRu2m7L-jPmHMAWGVPi3OIYsSO49knthCT_4KrtF7R99n-Ao81mEaE5BcLZFXtsrfJp_q2IUUbnD3_E_tL8yz6PIleP');">
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content Scrollable Area -->
+<div class="flex-1 overflow-y-auto p-6 lg:p-10">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- PageHeading Component -->
+<div class="flex flex-col gap-2">
+<h1 class="text-[#111814] dark:text-white text-3xl font-black tracking-tight">Overview</h1>
+<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-base">Monitoring environmental reports and urban resolution progress.</p>
+</div>
+<!-- Stats Component -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-[#1a2e22] p-6 rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-sm font-medium">Total Reports</p>
+<span class="material-symbols-outlined text-primary">assessment</span>
+</div>
+<p class="text-3xl font-bold text-[#111814] dark:text-white">1,248</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#078829]">trending_up</span>
+<span class="text-[#078829] text-sm font-bold">+12.5%</span>
+<span class="text-[#608a71] text-xs">from last month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2e22] p-6 rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-sm font-medium">Pending Action</p>
+<span class="material-symbols-outlined text-amber-500">pending_actions</span>
+</div>
+<p class="text-3xl font-bold text-[#111814] dark:text-white">84</p>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-[10px] font-bold uppercase tracking-wider">High Priority</span>
+<span class="text-[#608a71] text-xs">Require attention</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2e22] p-6 rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-sm font-medium">Resolved Issues</p>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<p class="text-3xl font-bold text-[#111814] dark:text-white">1,164</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+<span class="text-primary text-sm font-bold">93.4%</span>
+<span class="text-[#608a71] text-xs">Success Rate</span>
+</div>
+</div>
+</div>
+<!-- Recent Reports Section -->
+<div class="bg-white dark:bg-[#1a2e22] rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm overflow-hidden">
+<!-- SectionHeader -->
+<div class="px-6 py-5 border-b border-[#dbe6df] dark:border-[#2a4535] flex items-center justify-between">
+<h2 class="text-lg font-bold text-[#111814] dark:text-white">Recent Incident Reports</h2>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background-light dark:bg-[#102217] text-[#608a71] text-xs font-bold uppercase tracking-wider">
+<th class="px-6 py-3">Report ID</th>
+<th class="px-6 py-3">Issue Type</th>
+<th class="px-6 py-3">Citizen</th>
+<th class="px-6 py-3">Location</th>
+<th class="px-6 py-3">Priority</th>
+<th class="px-6 py-3">Status</th>
+<th class="px-6 py-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dbe6df] dark:divide-[#2a4535]">
+<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8429</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#608a71]">delete_outline</span>
+<span class="text-sm dark:text-[#dbe6df]">Illegal Dumping</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Marcus Thorne</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Greenwich Park</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">High</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-amber-500"></div>
+<span class="text-sm dark:text-[#dbe6df]">In Review</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8428</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#608a71]">water_drop</span>
+<span class="text-sm dark:text-[#dbe6df]">Water Leakage</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Elena Rodriguez</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">2nd &amp; Main St.</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">Medium</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-sm dark:text-[#dbe6df]">Resolved</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8427</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#608a71]">edit_road</span>
+<span class="text-sm dark:text-[#dbe6df]">Vandalism</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">John Doe</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">East Tunnel</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-background-light dark:bg-[#2a4535] text-[#608a71] dark:text-[#dbe6df]">Low</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-[#608a71]"></div>
+<span class="text-sm dark:text-[#dbe6df]">Pending</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
+<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8426</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#608a71]">light_mode</span>
+<span class="text-sm dark:text-[#dbe6df]">Street Light Out</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Sarah Williams</td>
+<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Maple Avenue</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">High</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-blue-500"></div>
+<span class="text-sm dark:text-[#dbe6df]">Dispatched</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 bg-background-light/30 dark:bg-[#102217]/30 border-t border-[#dbe6df] dark:border-[#2a4535] flex items-center justify-between">
+<p class="text-xs text-[#608a71] dark:text-[#dbe6df]/70 font-medium">Showing 1 to 4 of 1,248 reports</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-[#dbe6df] dark:border-[#2a4535] text-xs font-bold hover:bg-background-light dark:hover:bg-[#2a4535] transition-colors">Previous</button>
+<button class="px-3 py-1 rounded border border-[#dbe6df] dark:border-[#2a4535] text-xs font-bold hover:bg-background-light dark:hover:bg-[#2a4535] transition-colors">Next</button>
+</div>
+</div>
+</div>
+<!-- Map/Visual Section (Context Placeholder) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-10">
+<div class="bg-white dark:bg-[#1a2e22] rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm overflow-hidden h-64 flex flex-col">
+<div class="px-4 py-3 border-b border-[#dbe6df] dark:border-[#2a4535] flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">pin_drop</span>
+<h3 class="text-sm font-bold dark:text-white">Active Hotspots</h3>
+</div>
+<div class="flex-1 bg-cover bg-center relative" data-alt="Map of a city showing colored clusters of incident reports" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1');">
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2e22] rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm p-6 flex flex-col justify-between">
+<div>
+<h3 class="text-sm font-bold dark:text-white mb-1">Resolution Trend</h3>
+<p class="text-xs text-[#608a71] dark:text-[#dbe6df]/70 mb-4">Daily completion rate for the past 7 days</p>
+</div>
+<div class="h-32 w-full flex items-end gap-2 px-2">
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/2 rounded-t-sm" title="Monday: 42"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-3/4 rounded-t-sm" title="Tuesday: 68"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors h-full rounded-t-sm" title="Wednesday: 94"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-2/3 rounded-t-sm" title="Thursday: 55"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/2 rounded-t-sm" title="Friday: 45"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/3 rounded-t-sm" title="Saturday: 30"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/4 rounded-t-sm" title="Sunday: 20"></div>
+</div>
+<div class="flex justify-between mt-2 px-2 text-[10px] font-bold text-[#608a71] uppercase">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

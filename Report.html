@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report Illegal Dumping | GreenSweep</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+
+
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+/* ── Reset & base ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: 'Public Sans', sans-serif; }
+
+/* ── divide-y children ─────────────────────────── */
+.divide-y > * + * { border-top-width: 1px; border-top-style: solid; }
+.divide-y.dark\:divide-\[\#2a4535\] > * + * { border-color: #2a4535; }
+
+/* ── space-y children ─────────────────────────── */
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-8 > * + * { margin-top: 2rem; }
+
+/* ── no-scrollbar ──────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── card-hover (already in source style block) ── */
+.card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-hover:hover { transform: translateY(-4px); }
+
+/* ── form-input reset ──────────────────────────── */
+.form-input { -webkit-appearance: none; appearance: none; }
+
+/* ── group hover helper ────────────────────────── */
+.group:hover .group-hover\:bg-primary { background-color: #0df269; }
+.group:hover .group-hover\:text-background-dark { color: #102217; }
+.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+
+/* ── brightness hover ──────────────────────────── */
+.hover\:brightness-95:hover { filter: brightness(0.95); }
+.hover\:brightness-105:hover { filter: brightness(1.05); }
+
+/* ── border-b-\[3px\] ─────────────────────────── */
+.border-b-\[3px\] { border-bottom-width: 3px; }
+
+/* ── shadow-primary\/20 ──────────────────────── */
+.shadow-primary\/20 { box-shadow: 0 10px 15px -3px rgba(13,242,105,0.2); }
+.shadow-lg.shadow-primary\/20 { box-shadow: 0 10px 15px -3px rgba(13,242,105,0.2), 0 4px 6px -4px rgba(13,242,105,0.1); }
+
+/* ── flex items adjustments for layout-container ─ */
+.layout-container { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.layout-content-container { display: flex; flex-direction: column; }
+
+/* ── @container query fallback (using plain flex) ─ */
+\@container { container-type: inline-size; }
+
+
+/* ── Generated utility CSS ──────────────────────── */
+.-translate-y-1\/2 { transform: translateY(-50%); }
+.-translate-y-6 { transform: translateY(-1.5rem); }
+.absolute { position: absolute; }
+.appearance-none { -webkit-appearance: none; appearance: none; }
+.backdrop-blur-md { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.bg-background-light { background-color: #f5f8f7; }
+.bg-black\/20 { background-color: rgba(0,0,0,0.2); }
+.bg-center { background-position: center; }
+.bg-cover { background-size: cover; }
+.bg-gray-100 { background-color: #f3f4f6; }
+.bg-gray-200 { background-color: #e5e7eb; }
+.bg-gray-50 { background-color: #f9fafb; }
+.bg-primary { background-color: #0df269; }
+.bg-primary\/10 { background-color: rgba(13,242,105,0.1); }
+.bg-transparent { background-color: transparent; }
+.bg-white { background-color: #ffffff; }
+.bg-white\/80 { background-color: rgba(255,255,255,0.8); }
+.border { border-width: 1px; }
+.border-2 { border-width: 2px; }
+.border-b { border-bottom-width: 1px; }
+.border-dashed { border-style: dashed; }
+.border-gray-100 { border-color: #f3f4f6; }
+.border-gray-200 { border-color: #e5e7eb; }
+.border-primary { border-color: #0df269; }
+.border-t { border-top-width: 1px; }
+.bottom-4 { bottom: 1rem; }
+.cursor-pointer { cursor: pointer; }
+.drop-shadow-lg { filter: drop-shadow(0 10px 8px rgb(0 0 0/0.04)) drop-shadow(0 4px 3px rgb(0 0 0/0.1)); }
+.duration-200 { transition-duration: 200ms; }
+.flex { display: flex; }
+.flex-1 { flex: 1 1 0%; }
+.flex-col { flex-direction: column; }
+.focus\:border-transparent:focus { border-color: transparent; }
+.font-black { font-weight: 900; }
+.font-bold { font-weight: 700; }
+.font-display { font-family: "Public Sans", sans-serif; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.gap-10 { gap: 2.5rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+.h-10 { height: 2.5rem; }
+.h-12 { height: 3rem; }
+.h-16 { height: 4rem; }
+.h-1\.5 { height: 0.375rem; }
+.h-2 { height: 0.5rem; }
+.h-8 { height: 2rem; }
+.h-full { height: 100%; }
+.hidden { display: none; }
+.hover\:bg-gray-100:hover { background-color: #f3f4f6; }
+.hover\:bg-gray-200:hover { background-color: #e5e7eb; }
+.hover\:bg-gray-50:hover { background-color: #f9fafb; }
+.hover\:bg-primary\/90:hover { background-color: rgba(13,242,105,0.9); }
+.hover\:border-primary:hover { border-color: #0df269; }
+.hover\:text-primary:hover { color: #0df269; }
+.inset-0 { inset: 0; }
+.italic { font-style: italic; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.max-w-2xl { max-width: 42rem; }
+.max-w-7xl { max-width: 80rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.min-h-\[400px\] { min-height: 400px; }
+.min-h-screen { min-height: 100vh; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-12 { margin-top: 3rem; }
+.mt-4 { margin-top: 1rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.outline-none { outline: none; }
+.overflow-hidden { overflow: hidden; }
+.p-10 { padding: 2.5rem; }
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.pl-4 { padding-left: 1rem; }
+.pointer-events-none { pointer-events: none; }
+.pr-10 { padding-right: 2.5rem; }
+.pt-8 { padding-top: 2rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.relative { position: relative; }
+.resize-none { resize: none; }
+.right-3 { right: 0.75rem; }
+.right-4 { right: 1rem; }
+.rounded { border-radius: 0.25rem; }
+.rounded-full { border-radius: 9999px; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0/0.1),0 4px 6px -4px rgb(0 0 0/0.1); }
+.shadow-md { box-shadow: 0 4px 6px -1px rgb(0 0 0/0.1),0 2px 4px -2px rgb(0 0 0/0.1); }
+.shadow-primary\/20 { --tw-shadow-color: rgba(13,242,105,0.2); }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0/0.05); }
+.shadow-xl { box-shadow: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.1); }
+.space-y-6 { --tw-space-y-reverse: 0; }
+.sticky { position: sticky; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+.text-\[10px\] { color: 10px; }
+.text-\[\#111814\] { color: #111814; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-gray-400 { color: #9ca3af; }
+.text-gray-500 { color: #6b7280; }
+.text-gray-700 { color: #374151; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-primary { color: #0df269; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-white { color: #ffffff; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.top-0 { top: 0; }
+.top-1\/2 { top: 50%; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.transition-colors { transition-property: color,background-color,border-color,text-decoration-color,fill,stroke; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.uppercase { text-transform: uppercase; }
+.w-10 { width: 2.5rem; }
+.w-16 { width: 4rem; }
+.w-2 { width: 0.5rem; }
+.w-3 { width: 0.75rem; }
+.w-8 { width: 2rem; }
+.w-full { width: 100%; }
+.z-50 { z-index: 50; }
+
+.dark .dark\:bg-\[\#102217\] { background-color: #102217; }
+.dark .dark\:bg-\[\#14261b\] { background-color: #14261b; }
+.dark .dark\:bg-\[\#1a2e21\] { background-color: #1a2e21; }
+.dark .dark\:bg-background-dark { background-color: #102217; }
+.dark .dark\:bg-background-dark\/80 { background-color: rgba(16,34,23,0.8); }
+.dark .dark\:bg-gray-800 { background-color: #1f2937; }
+.dark .dark\:bg-primary\/20 { background-color: rgba(13,242,105,0.2); }
+.dark .dark\:border-gray-700 { border-color: #374151; }
+.dark .dark\:border-gray-800 { border-color: #1f2937; }
+.dark .dark\:hover\:bg-gray-800:hover { background-color: #1f2937; }
+.dark .dark\:text-gray-200 { color: #e5e7eb; }
+.dark .dark\:text-gray-300 { color: #d1d5db; }
+.dark .dark\:text-gray-400 { color: #9ca3af; }
+.dark .dark\:text-white { color: #ffffff; }
+
+@media (min-width: 640px) {
+  .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+  .md\:flex { display: flex; }
+  .md\:flex-row { flex-direction: row; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:col-span-5 { grid-column: span 5 / span 5; }
+  .lg\:col-span-7 { grid-column: span 7 / span 7; }
+  .lg\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+}</style></head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen text-[#111814] dark:text-white transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">eco</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">GreenSweep</h1>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Home.html">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Awarness.html">Awareness</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="report.html">Report</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Dashboard.html">Dashboard</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Admin.html">Admin</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="User profile avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDe6M9pdCWIqio17-dlBNmxBwpm3VLSpnxLX1-PM4KaxIiWKbSJPmCanWqqKcNCHA-_kvPQf4EbPNPRKw7ghSnTDsDxDGfj2qDYz2IElca12MUoj__VZFWvglbaf-jSd9K2TJEpt4Ohxug85SXvJ7SqO1OQk1baHYGxJi9qwJiujVYLgBsPDVEeZCfFZ5hd9l83v4HJpBCBjdkzIbSBsiQruYR-JzbKObOTH_SptI989eHJR5Ic-UuFCU60Siu22fPwP6rYr4dxIiGi");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-6">
+<a class="text-gray-500 hover:text-primary text-sm font-medium transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-gray-400 text-sm">chevron_right</span>
+<span class="text-[#111814] dark:text-gray-200 text-sm font-semibold">Report Illegal Dumping</span>
+</div>
+<!-- Page Heading -->
+<div class="mb-10">
+<h2 class="text-4xl font-black tracking-tight mb-2">Report Illegal Dumping</h2>
+<p class="text-gray-500 dark:text-gray-400 text-lg max-w-2xl">
+                Help us keep GreenSweeo beautiful by pinpointing waste locations and providing details for our cleanup crews.
+            </p>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Form Details -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">description</span>
+<h3 class="text-xl font-bold">Incident Details</h3>
+</div>
+<div class="space-y-6">
+<!-- Waste Category -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Waste Category</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#102217] appearance-none focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+<option value="">Select waste type...</option>
+<option value="construction">Construction Debris</option>
+<option value="hazardous">Hazardous Waste / Chemicals</option>
+<option value="furniture">Furniture / Large Appliances</option>
+<option value="tires">Automotive / Tires</option>
+<option value="trash">General Household Trash</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">expand_more</span>
+</div>
+</div>
+<!-- Description -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Detailed Description</label>
+<textarea class="w-full p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#102217] focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none" placeholder="Tell us more about the size, type, or accessibility of the dumping..." rows="5"></textarea>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">photo_camera</span>
+<h3 class="text-xl font-bold">Visual Evidence</h3>
+</div>
+<!-- File Upload Zone -->
+<div class="border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl p-10 flex flex-col items-center justify-center hover:border-primary transition-colors group cursor-pointer">
+<div class="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">upload_file</span>
+</div>
+<p class="text-base font-semibold mb-1">Upload photos of the waste</p>
+<p class="text-sm text-gray-500">Drag and drop or click to browse</p>
+<p class="text-xs text-gray-400 mt-4 italic">Max 5 images. PNG, JPG formats allowed.</p>
+</div>
+</section>
+</div>
+<!-- Right Column: Map and Metadata -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden h-full flex flex-col">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h3 class="text-xl font-bold">Location</h3>
+</div>
+<span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded uppercase tracking-wider">GPS Active</span>
+</div>
+<p class="text-sm text-gray-500">Drag the pin to the exact location of the dumping site.</p>
+</div>
+<!-- Map Component Placeholder -->
+<div class="relative flex-1 min-h-[400px] bg-gray-200 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Interactive city map with navigation overlay" data-location="San Francisco" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1");'></div>
+<!-- Map Pin Overlay UI -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="flex flex-col items-center -translate-y-6">
+<div class="bg-white dark:bg-background-dark px-3 py-1.5 rounded-lg shadow-xl border border-gray-100 dark:border-gray-800 mb-2">
+<p class="text-[10px] font-bold uppercase text-gray-500">Selected Location</p>
+<p class="text-xs font-semibold">37.7749° N, 122.4194° W</p>
+</div>
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg">location_on</span>
+<div class="w-3 h-1.5 bg-black/20 rounded-full blur-[2px] mt-1"></div>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute bottom-4 right-4 flex flex-col gap-2">
+<button class="w-10 h-10 bg-white dark:bg-background-dark rounded-lg shadow-md flex items-center justify-center text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 bg-white dark:bg-background-dark rounded-lg shadow-md flex items-center justify-center text-gray-700 dark:text-gray-200">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-10 h-10 bg-white dark:bg-background-dark rounded-lg shadow-md flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+</div>
+<div class="p-4 bg-gray-50 dark:bg-[#14261b]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-400">info</span>
+<p class="text-xs text-gray-500">Your address will be automatically detected but can be adjusted manually if needed.</p>
+</div>
+</div>
+</section>
+<!-- Actions Card -->
+<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-[#111814] font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+                            Submit Final Report
+                        </button>
+<div class="flex gap-4">
+<button class="flex-1 bg-gray-100 dark:bg-[#102217] hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">save</span>
+                                Save Draft
+                            </button>
+<button class="px-4 bg-transparent border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 py-3 rounded-xl transition-all">
+                                Cancel
+                            </button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer / Progress Meta -->
+<footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-sm font-medium">Reporting anonymously</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-sm font-medium">Auto-save: 2 min ago</span>
+</div>
+</div>
+<p class="text-sm text-gray-400">© 2026 GreenSweep Environmental Services. All rights reserved.</p>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GreenSweep - Smart Environmental Reporting</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Interactive Hover Button Styles */
+        .interactive-hover-btn {
+          position: relative;
+          width: 8rem;
+          cursor: pointer;
+          overflow: hidden;
+          border-radius: 9999px;
+          border: 1px solid #dbe6df;
+          background-color: transparent;
+          padding: 0.5rem;
+          text-align: center;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .dark .interactive-hover-btn {
+          border-color: #2a3d31;
+        }
+
+        .interactive-hover-btn .btn-text {
+          display: inline-block;
+          transform: translateX(0.25rem);
+          transition: all 0.3s ease;
+        }
+
+        .interactive-hover-btn:hover .btn-text {
+          transform: translateX(3rem);
+          opacity: 0;
+        }
+
+        .interactive-hover-btn .btn-hover-content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          display: flex;
+          height: 100%;
+          width: 100%;
+          transform: translateX(3rem);
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          color: #102217;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        .dark .interactive-hover-btn .btn-hover-content {
+          color: #ffffff;
+        }
+
+        .interactive-hover-btn:hover .btn-hover-content {
+          transform: translateX(-0.25rem);
+          opacity: 1;
+        }
+
+        .interactive-hover-btn .btn-background {
+          position: absolute;
+          left: 20%;
+          top: 40%;
+          height: 0.5rem;
+          width: 0.5rem;
+          border-radius: 0.5rem;
+          background-color: #0df269;
+          transition: all 0.3s ease;
+          z-index: -1;
+        }
+
+        .interactive-hover-btn:hover .btn-background {
+          left: 0%;
+          top: 0%;
+          height: 100%;
+          width: 100%;
+          transform: scale(1.8);
+        }
+
+        /* Arrow icon styling */
+        .btn-arrow {
+          width: 1.25rem;
+          height: 1.25rem;
+          display: inline-block;
+          position: relative;
+        }
+
+        .btn-arrow::after {
+          content: "→";
+          font-size: 1.25rem;
+          line-height: 1;
+        }
+
+        /* Mobile menu checkbox hack */
+        #mobile-menu-toggle:checked ~ .mobile-menu {
+          display: block;
+        }
+    </style>
+<style>
+
+    /* styling and css . we did not used external styling for ease of use. */
+
+    /*Reset & base */
+
+    *, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: 'Public Sans', sans-serif; }
+
+/* ── divide-y children*/
+.divide-y > * + * { border-top-width: 1px; border-top-style: solid; }
+.divide-y.dark\:divide-\[\#2a4535\] > * + * { border-color: #2a4535; }
+
+/* ── space-y children */
+
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-8 > * + * { margin-top: 2rem; }
+
+/* ── no-scrollbar */
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/*  card-hover,already in source style block */
+
+.card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-hover:hover { transform: translateY(-4px); }
+
+/*form-input reset */
+.form-input { -webkit-appearance: none; appearance: none; }
+
+/*group hover helper*/
+.group:hover .group-hover\:bg-primary { background-color: #0df269; }
+.group:hover .group-hover\:text-background-dark { color: #102217; }
+.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+
+/*brightness hover */
+.hover\:brightness-95:hover { filter: brightness(0.95); }
+.hover\:brightness-105:hover { filter: brightness(1.05); }
+
+/*border-b-\[3px\] */
+.border-b-\[3px\] { border-bottom-width: 3px; }
+
+/*shadow-primary\/20 */
+.shadow-primary\/20 { box-shadow: 0 10px 15px -3px rgba(13,242,105,0.2); }
+.shadow-lg.shadow-primary\/20 { box-shadow: 0 10px 15px -3px rgba(13,242,105,0.2), 0 4px 6px -4px rgba(13,242,105,0.1); }
+
+/* flex items adjustments for layout-container*/
+.layout-container { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.layout-content-container { display: flex; flex-direction: column; }
+
+/*@container query fallback (using plain flex) */
+\@container { container-type: inline-size; }
+
+
+/*Generated utility CSS */
+.-inset-4 { inset: -1rem; }
+.absolute { position: absolute; }
+.aspect-\[4\/3\] { aspect-ratio: 4 / 3; }
+.aspect-square { aspect-ratio: 1 / 1; }
+.backdrop-blur-md { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.bg-\[\#111814\] { background-color: #111814; }
+.bg-\[\#f0f5f2\] { background-color: #f0f5f2; }
+.bg-background-light { background-color: #f5f8f7; }
+.bg-center { background-position: center; }
+.bg-cover { background-size: cover; }
+.bg-no-repeat { background-repeat: no-repeat; }
+.bg-primary { background-color: #0df269; }
+.bg-primary\/10 { background-color: rgba(13,242,105,0.1); }
+.bg-primary\/20 { background-color: rgba(13,242,105,0.2); }
+.bg-white { background-color: #ffffff; }
+.bg-white\/5 { background-color: rgba(255,255,255,0.05); }
+.bg-white\/80 { background-color: rgba(255,255,255,0.8); }
+.blur-3xl { filter: blur(64px); }
+.border { border-width: 1px; }
+.border-2 { border-width: 2px; }
+.border-4 { border-width: 4px; }
+.border-\[\#dbe6df\] { border-color: #dbe6df; }
+.border-b { border-bottom-width: 1px; }
+.border-solid { border-style: solid; }
+.border-t { border-top-width: 1px; }
+.border-white { border-color: #ffffff; }
+.border-white\/10 { border-color: rgba(255,255,255,0.1); }
+.col-span-1 { grid-column: span 1 / span 1; }
+.cursor-pointer { cursor: pointer; }
+.duration-300 { transition-duration: 300ms; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.focus\:border-primary:focus { border-color: #0df269; }
+.font-black { font-weight: 900; }
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.gap-1 { gap: 0.25rem; }
+.gap-10 { gap: 2.5rem; }
+.gap-12 { gap: 3rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.group:hover .group-hover\:bg-primary { background-color: #0df269; }
+.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+.group:hover .group-hover\:text-background-dark { color: #102217; }
+.h-10 { height: 2.5rem; }
+.h-12 { height: 3rem; }
+.h-14 { height: 3.5rem; }
+.h-16 { height: 4rem; }
+.h-full { height: 100%; }
+.hidden { display: none; }
+.hover\:bg-\[\#e2ede6\]:hover { background-color: #e2ede6; }
+.hover\:bg-\[\#f0f5f2\]:hover { background-color: #f0f5f2; }
+.hover\:border-primary:hover { border-color: #0df269; }
+.hover\:brightness-105:hover { filter: brightness(1.05); }
+.hover\:scale-\[1\.02\]:hover { transform: scale(1.02); }
+.hover\:text-primary:hover { color: #0df269; }
+.inline-flex { display: inline-flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.leading-relaxed { line-height: 1.625; }
+.leading-tight { line-height: 1.25; }
+.max-w-2xl { max-width: 42rem; }
+.max-w-\[1200px\] { max-width: 1200px; }
+.max-w-\[500px\] { max-width: 500px; }
+.mb-16 { margin-bottom: 4rem; }
+.mb-20 { margin-bottom: 5rem; }
+.min-w-\[100px\] { min-width: 100px; }
+.min-w-\[120px\] { min-width: 120px; }
+.mt-8 { margin-top: 2rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.opacity-30 { opacity: 0.3; }
+.overflow-hidden { overflow: hidden; }
+.p-1 { padding: 0.25rem; }
+.p-1\.5 { padding: 0.375rem; }
+.p-2 { padding: 0.5rem; }
+.p-8 { padding: 2rem; }
+.pb-8 { padding-bottom: 2rem; }
+.pointer-events-none { pointer-events: none; }
+.pt-16 { padding-top: 4rem; }
+.pt-8 { padding-top: 2rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+.py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.relative { position: relative; }
+.right-0 { right: 0; }
+.rounded { border-radius: 0.25rem; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-3xl { border-radius: 1.5rem; }
+.rounded-full { border-radius: 9999px; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0/0.25); }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0/0.05); }
+.sticky { position: sticky; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+.text-\[\#078829\] { color: #078829; }
+.text-\[\#111814\] { color: #111814; }
+.text-\[\#608a71\] { color: #608a71; }
+.text-background-dark { color: #102217; }
+.text-center { text-align: center; }
+.text-gray-400 { color: #9ca3af; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-primary { color: #0df269; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-white { color: #ffffff; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.top-0 { top: 0; }
+.tracking-\[-0\.03em\] { letter-spacing: -0.03em; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.transition-colors { transition-property: color,background-color,border-color,text-decoration-color,fill,stroke; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4,0,0.2,1); transition-duration: 150ms; }
+.uppercase { text-transform: uppercase; }
+.w-16 { width: 4rem; }
+.w-1\/3 { width: 33.333333%; }
+.w-fit { width: fit-content; }
+.w-full { width: 100%; }
+.z-50 { z-index: 50; }
+
+.dark .dark\:bg-\[\#08110b\] { background-color: #08110b; }
+.dark .dark\:bg-\[\#1a2e21\] { background-color: #1a2e21; }
+.dark .dark\:bg-background-dark { background-color: #102217; }
+.dark .dark\:bg-background-dark\/80 { background-color: rgba(16,34,23,0.8); }
+.dark .dark\:border-\[\#1a2e21\] { border-color: #1a2e21; }
+.dark .dark\:border-\[\#2a3d31\] { border-color: #2a3d31; }
+.dark .dark\:hover\:bg-\[\#1a2e21\]:hover { background-color: #1a2e21; }
+.dark .dark\:text-gray-400 { color: #9ca3af; }
+.dark .dark\:text-white { color: #ffffff; }
+
+@media (min-width: 640px) {
+  .sm\:flex { display: flex; }
+  .sm\:flex-row { flex-direction: row; }
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sm\:hidden { display: none; }
+}
+
+@media (min-width: 768px) {
+  .md\:col-span-1 { grid-column: span 1 / span 1; }
+  .md\:flex { display: flex; }
+  .md\:flex-row { flex-direction: row; }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .md\:px-16 { padding-left: 4rem; padding-right: 4rem; }
+  .md\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+  .md\:text-6xl { font-size: 3.75rem; line-height: 1; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}</style></head>
+<body class="bg-background-light dark:bg-background-dark text-[#111814] dark:text-white transition-colors duration-300">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-[#dbe6df] dark:border-[#2a3d31] bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center bg-primary rounded-lg p-1.5">
+<span class="material-symbols-outlined text-background-dark text-xl">eco</span>
+</div>
+<h2 class="text-[#111814] dark:text-white text-xl font-bold leading-tight tracking-tight">GreenSweep</h2>
+</div>
+
+<!-- Desktop Navigation -->
+<nav class="hidden sm:flex items-center gap-10">
+<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Home.html">Home</a>
+<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Awareness.html">Awareness</a>
+<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="report.html">Report</a>
+<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Dashboard.html">Dashboard</a>
+<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Admin.html">Admin</a>
+</nav>
+
+<!-- Mobile Menu Checkbox (hidden) -->
+<input type="checkbox" id="mobile-menu-toggle" class="hidden">
+
+<!-- Mobile Menu Button (label for checkbox) -->
+<label for="mobile-menu-toggle" class="sm:hidden flex items-center justify-center p-2 rounded-lg hover:bg-[#f0f5f2] dark:hover:bg-[#1a2e21] transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[#111814] dark:text-white">menu</span>
+</label>
+
+<div class="hidden sm:flex items-center gap-3">
+<button class="min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f5f2] dark:bg-[#1a2e21] text-[#111814] dark:text-white text-sm font-bold transition-all hover:bg-[#e2ede6] hover:text-primary">
+Log In
+</button>
+<button class="interactive-hover-btn" style="width: 120px; height: 40px; background-color: #0df269; border: none;">
+    <span class="btn-text" style="color: #102217;">Report Now</span>
+    <div class="btn-hover-content" style="color: #102217;">
+        <span>Report Now</span>
+        <span class="btn-arrow"></span>
+    </div>
+    <div class="btn-background" style="background-color: #0df269;"></div>
+</button>
+</div>
+</div>
+
+<!-- Mobile Menu Dropdown (controlled by checkbox) -->
+<div class="sm:hidden hidden mobile-menu px-6 py-4 bg-white dark:bg-background-dark border-t border-[#dbe6df] dark:border-[#2a3d31]" id="mobile-menu">
+<nav class="flex flex-col gap-4">
+<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Home.html">Home</a>
+<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Awareness.html">Awareness</a>
+<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="report.html">Report</a>
+<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Dashboard.html">Dashboard</a>
+<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Admin.html">Admin</a>
+<div class="flex flex-col gap-3 pt-4 border-t border-[#dbe6df] dark:border-[#2a3d31]">
+<button class="w-full cursor-pointer items-center justify-center rounded-lg h-10 bg-[#f0f5f2] dark:bg-[#1a2e21] text-[#111814] dark:text-white text-sm font-bold transition-all hover:bg-[#e2ede6] hover:text-primary">
+Log In
+</button>
+<button class="interactive-hover-btn w-full" style="background-color: #0df269; border: none; width: 100%;">
+    <span class="btn-text" style="color: #102217;">Report Now</span>
+    <div class="btn-hover-content" style="color: #102217;">
+        <span>Report Now</span>
+        <span class="btn-arrow"></span>
+    </div>
+    <div class="btn-background" style="background-color: #0df269;"></div>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6">
+<!-- Hero Section -->
+<section class="py-12 md:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                            Smart City Initiative
+                        </div>
+<h1 class="text-[#111814] dark:text-white text-5xl md:text-6xl font-black leading-tight tracking-[-0.03em]">
+                            Cleaner Streets, <br/><span class="text-primary">Stronger Communities.</span>
+</h1>
+<p class="text-lg text-[#608a71] dark:text-gray-400 max-w-[500px] leading-relaxed">
+                            Report environmental issues in seconds and help your city thrive. Join thousands of citizens making a difference today.
+                        </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="interactive-hover-btn" style="width: auto; padding-left: 2rem; padding-right: 2rem; height: 3.5rem; background-color: #0df269; border: none;">
+    <span class="btn-text" style="color: #102217;">Report Now</span>
+    <div class="btn-hover-content" style="color: #102217;">
+        <span>Report Now</span>
+        <span class="btn-arrow"></span>
+    </div>
+    <div class="btn-background" style="background-color: #0df269;"></div>
+</button>
+<button class="interactive-hover-btn" style="width: auto; padding-left: 2rem; padding-right: 2rem; height: 3.5rem; background-color: transparent; border-width: 2px;">
+    <span class="btn-text" style="color: #111814;">Learn More</span>
+    <div class="btn-hover-content" style="color: #111814;">
+        <span>Learn More</span>
+        <span class="btn-arrow"></span>
+    </div>
+    <div class="btn-background" style="background-color: #0df269;"></div>
+</button>
+</div>
+</div>
+
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30"></div>
+<div class="relative w-full aspect-[4/3] bg-center bg-no-repeat bg-cover rounded-2xl shadow-2xl border-4 border-white dark:border-[#1a2e21]" data-alt="Happy citizens in a clean green urban park environment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvtgZRgDgyb2vQMnALmamk-cXRFVjPZE0IAHqPvM7H8gI9cHujlW3Uz3k1wFzaHOIV061Ksl5RiC5iuO5ims2DYIU7c59zyIDSAIInCYmTslg2SeYwK48YpHiPBZMdeC0QKexqcQmWgo18Ism0etqvlzcIl8kGlOHIx_AeRSCoAcHozMHsUzxfDOq5zgK5GvBWI-C4XEfpZdfvGtb0HdrS5jvRUFhIfEz3qMRwmCD2JNYoYP0ZaIeRLU2abGsh0uK6FTMzMwTc_vzD");'>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-10" id="impact">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="flex flex-col gap-3 rounded-2xl p-8 bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-[#608a71] text-sm font-semibold uppercase tracking-wider">Reports Resolved</p>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<p class="text-[#111814] dark:text-white text-4xl font-black">5,000+</p>
+<div class="flex items-center gap-1 text-[#078829] font-bold text-sm bg-primary/10 px-2 py-0.5 rounded w-fit">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +12%
+                    </div>
+</div>
+<div class="flex flex-col gap-3 rounded-2xl p-8 bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-[#608a71] text-sm font-semibold uppercase tracking-wider">Active Users</p>
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<p class="text-[#111814] dark:text-white text-4xl font-black">12,000+</p>
+<div class="flex items-center gap-1 text-[#078829] font-bold text-sm bg-primary/10 px-2 py-0.5 rounded w-fit">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +8%
+                    </div>
+</div>
+<div class="flex flex-col gap-3 rounded-2xl p-8 bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-[#608a71] text-sm font-semibold uppercase tracking-wider">Cities Partnered</p>
+<span class="material-symbols-outlined text-primary">location_city</span>
+</div>
+<p class="text-[#111814] dark:text-white text-4xl font-black">45</p>
+<div class="flex items-center gap-1 text-[#078829] font-bold text-sm bg-primary/10 px-2 py-0.5 rounded w-fit">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +5%
+                    </div>
+</div>
+</div>
+</section>
+<!-- Feature Section - How it Works -->
+<section class="py-20" id="how-it-works">
+<div class="flex flex-col items-center text-center gap-4 mb-16">
+<h2 class="text-4xl font-black text-[#111814] dark:text-white tracking-tight">How it Works</h2>
+<p class="text-[#608a71] dark:text-gray-400 text-lg max-w-2xl">
+                    Making your city cleaner is as simple as three easy steps. We handle the communication with the right local departments.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group flex flex-col items-center text-center gap-6 p-8 rounded-2xl bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] hover:border-primary transition-all shadow-sm">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-background-dark">photo_camera</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-[#111814] dark:text-white">Snap a Photo</h3>
+<p class="text-[#608a71] dark:text-gray-400">Capture the environmental issue directly through our intuitive mobile app or web platform.</p>
+</div>
+</div>
+<div class="group flex flex-col items-center text-center gap-6 p-8 rounded-2xl bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] hover:border-primary transition-all shadow-sm">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-background-dark">send</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-[#111814] dark:text-white">Submit Report</h3>
+<p class="text-[#608a71] dark:text-gray-400">Provide a location and category to notify the relevant municipal authorities automatically.</p>
+</div>
+</div>
+<div class="group flex flex-col items-center text-center gap-6 p-8 rounded-2xl bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] hover:border-primary transition-all shadow-sm">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-background-dark">map</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-[#111814] dark:text-white">Track Progress</h3>
+<p class="text-[#608a71] dark:text-gray-400">Get real-time updates as your report is reviewed, scheduled, and resolved by the city.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Authorities Section -->
+<section class="py-20 rounded-3xl bg-[#111814] dark:bg-[#08110b] text-white overflow-hidden relative mb-20" id="authorities">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/10 blur-[100px] pointer-events-none"></div>
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 md:px-16">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<h2 class="text-4xl font-black tracking-tight">For Municipal Authorities</h2>
+<p class="text-lg text-gray-400 leading-relaxed">
+                            Empower your city with data-driven insights and streamlined reporting workflows. Reduce response times and increase citizen satisfaction.
+                        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">dashboard</span>
+<h4 class="text-lg font-bold">Real-time Dashboard</h4>
+<p class="text-sm text-gray-400">Monitor reports across the city in real-time with an integrated management system.</p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+<h4 class="text-lg font-bold">Data-Driven Planning</h4>
+<p class="text-sm text-gray-400">Use historical data to identify problem areas and allocate resources more effectively.</p>
+</div>
+</div>
+<button class="interactive-hover-btn" style="width: auto; padding-left: 2rem; padding-right: 2rem; height: 3rem; background-color: #0df269; border: none;">
+    <span class="btn-text" style="color: #102217;">Partner with Us</span>
+    <div class="btn-hover-content" style="color: #102217;">
+        <span>Partner with Us</span>
+        <span class="btn-arrow"></span>
+    </div>
+    <div class="btn-background" style="background-color: #0df269;"></div>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square bg-white/5 rounded-2xl overflow-hidden border border-white/10 group">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Digital city dashboard with heatmaps and statistics" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIYzkZ_wfSbgQcRwcHmUcRaDQhKU7MmmpFL1PB5Jgp__bRVEY5XC4qunCAYRxUXDcuWVyX60onqpDgyFN3eMWSWnV3nsYBN7AMb4Wm3wL1fitWxffGAEBm-o1-SHo4W2azhNI_ElVcMpIGNm3FgrelHN7YVkafbm3U18-rCCyycvgtXILEE3GGkd-ZiFRjdgpPmkL98a0vHKr7rUFFXrv-Y1PRxuK4Y2QaNScFJ5tuVg48l0LS_50LzQpIPeFHQdoHXxZzeXQKP0w8");'></div>
+</div>
+<div class="aspect-square bg-white/5 rounded-2xl overflow-hidden border border-white/10 mt-8 group">
+<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Urban planner looking at city map data on tablet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaD0TfrpeWmlZ-bXTBHhWB2FU_erdi4_ei_gLZWrkx7TAO0sw2mA6XBn6e_ue7T75QGn6AdKw2_Vvu93cwqjbhUDl5HWmLO6dtk1LurVZrrDan5Ue8PR5zZtvsETCyQ-xVIWu22K3kOJbUmbAiXrlIyxV3ptKhgTVLKaiiqiANusjU4odHRQdT7oLZFV4lJfaOlvHzJQig77qowbpIioWkT3OO-44BcEFpVh3OebqEwtLafKBUvKgOlsLipIbul5qetRGVCcis0RHC");'></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-[#dbe6df] dark:border-[#2a3d31] pt-16 pb-8">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center bg-primary rounded-lg p-1">
+<span class="material-symbols-outlined text-background-dark text-lg">eco</span>
+</div>
+<h2 class="text-[#111814] dark:text-white text-xl font-bold tracking-tight">GreenSweep</h2>
+</div>
+<p class="text-sm text-[#608a71] dark:text-gray-400 leading-relaxed">
+                        Building smarter, cleaner, and more sustainable cities through citizen engagement and modern technology.
+                    </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold">Platform</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Mobile App</a>
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Impact Report</a>
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Pricing</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold">Company</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Partner Program</a>
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Press Kit</a>
+<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold">Subscribe</h4>
+<p class="text-sm text-[#608a71] dark:text-gray-400">Get updates on local environmental projects.</p>
+<div class="flex gap-2">
+<input class="w-full rounded-lg bg-background-light dark:bg-[#1a2e21] border-[#dbe6df] dark:border-[#2a3d31] text-sm px-4 py-2 focus:ring-primary focus:border-primary" placeholder="Your email" type="email"/>
+<button class="bg-primary text-background-dark p-2 rounded-lg hover:brightness-105 transition-all">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#dbe6df] dark:border-[#2a3d31] gap-4">
+<p class="text-xs text-[#608a71] dark:text-gray-400">© 2026 GreenSweep Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-xs text-[#608a71] dark:text-gray-400 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-xs text-[#608a71] dark:text-gray-400 hover:text-primary" href="#">Terms of Service</a>
+<a class="text-xs text-[#608a71] dark:text-gray-400 hover:text-primary" href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
