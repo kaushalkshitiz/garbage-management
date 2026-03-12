@@ -1,323 +1,256 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Complaint Management Center | GreenSweep Admin</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="css/Admineport.css" rel="stylesheet"/>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complaint Management Center | GreenSweep Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Admin.css" />
 </head>
-<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#111814] dark:text-white">
-<!-- Top Navigation Bar -->
-<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-solid border-[#dbe6df] dark:border-[#2a3a30] px-4 md:px-10 lg:px-20 py-3">
-<div class="max-w-[1280px] mx-auto flex items-center justify-between whitespace-nowrap">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-3 text-[#111814] dark:text-primary">
-<div class="size-8 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
-</svg>
-</div>
-<h2 class="text-[#111814] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">GreenSweep Admin</h2>
-</div>
-<nav class="hidden md:flex items-center gap-10">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Home.html">Home</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Awarness.html">Awareness</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="report.html">Report</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Dashboard.html">Dashboard</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Admin.html">Admin</a>
-</nav>
-</div>
-<div class="flex items-center gap-4 lg:gap-8">
-<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
-<div class="text-[#608a71] flex border-none bg-[#f0f5f2] dark:bg-[#1a2e22] items-center justify-center pl-4 rounded-l-lg">
-<span class="material-symbols-outlined text-xl">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f5f2] dark:bg-[#1a2e22] text-[#111814] dark:text-white focus:ring-0 h-full placeholder:text-[#608a71] px-4 rounded-r-lg text-sm font-normal" placeholder="Search ID or Location" value=""/>
-</div>
-</label>
-<div class="flex items-center gap-3">
-<button class="flex h-10 px-4 items-center justify-center rounded-lg bg-primary text-[#111814] text-sm font-bold transition-transform hover:scale-[1.02]">
-<span class="truncate">Admin Profile</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Official admin portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfbtvSeXin6RjA1KqSDzdEmrWJU83Tn0WRSQyYehA15LDl4zl6gN7vuRg0m3MVuTjdx4XeUVNNyVOQAdtWj_5omeFLy7JcSFMrEfTL77-jWs_8DVZGMTe4SG1nRXm6V9Wu5h4FnR15pEm1ddpfqxS4GDkWW2yIHmpFjXAdLAo3sOB9zKfTolB-3hv8G8AOit2T6PjAmgYq4hmBrs74aRQFrpZ8y0x4lPMusguq_JgZG_TcVqjc8Cd4E_KGwrH8i1MYpB-py3KGvNMO");'></div>
-</div>
-</div>
-</div>
-</header>
-<main class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-20 py-8">
-<!-- Page Heading -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-<div class="flex flex-col gap-2">
-<h1 class="text-[#111814] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Complaint Management Center</h1>
-<p class="text-[#608a71] text-lg font-normal">Review and resolve environmental reports submitted by citizens.</p>
-</div>
-<div class="flex gap-3">
-<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3a30] rounded-lg text-sm font-bold shadow-sm">
-<span class="material-symbols-outlined text-lg">download</span> Export Data
-                </button>
-</div>
-</div>
-<!-- Filters & Tabs -->
-<div class="bg-white dark:bg-[#14261b] rounded-xl shadow-sm border border-[#dbe6df] dark:border-[#2a3a30] mb-8">
-<div class="border-b border-[#dbe6df] dark:border-[#2a3a30] px-6">
-<div class="flex gap-8 overflow-x-auto no-scrollbar">
-<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#608a71] pb-[13px] pt-4 whitespace-nowrap" href="#">
-<p class="text-sm font-bold tracking-[0.015em]">All Reports (248)</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-[#111814] dark:text-white pb-[13px] pt-4 whitespace-nowrap" href="#">
-<p class="text-sm font-bold tracking-[0.015em]">Pending (42)</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#608a71] pb-[13px] pt-4 whitespace-nowrap" href="#">
-<p class="text-sm font-bold tracking-[0.015em]">In Progress (15)</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#608a71] pb-[13px] pt-4 whitespace-nowrap" href="#">
-<p class="text-sm font-bold tracking-[0.015em]">Resolved (191)</p>
-</a>
-</div>
-</div>
-<div class="flex flex-wrap gap-3 p-4">
-<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-[#f0f5f2] dark:bg-[#1a2e22] px-4 border border-transparent hover:border-primary/50 transition-all">
-<span class="material-symbols-outlined text-lg text-primary">priority_high</span>
-<p class="text-[#111814] dark:text-white text-sm font-medium">High Urgency</p>
-<span class="material-symbols-outlined text-lg">expand_more</span>
-</button>
-<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-[#f0f5f2] dark:bg-[#1a2e22] px-4">
-<span class="material-symbols-outlined text-lg">delete</span>
-<p class="text-[#111814] dark:text-white text-sm font-medium">Trash &amp; Litter</p>
-<span class="material-symbols-outlined text-lg">expand_more</span>
-</button>
-<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-[#f0f5f2] dark:bg-[#1a2e22] px-4">
-<span class="material-symbols-outlined text-lg">construction</span>
-<p class="text-[#111814] dark:text-white text-sm font-medium">Infrastructure</p>
-<span class="material-symbols-outlined text-lg">expand_more</span>
-</button>
-<button class="flex h-9 items-center justify-center gap-x-2 rounded-lg bg-[#f0f5f2] dark:bg-[#1a2e22] px-4">
-<span class="material-symbols-outlined text-lg">calendar_today</span>
-<p class="text-[#111814] dark:text-white text-sm font-medium">Last 7 Days</p>
-</button>
-</div>
-</div>
-<!-- Complaint Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Card 1 -->
-<div class="bg-white dark:bg-[#14261b] rounded-xl overflow-hidden border border-[#dbe6df] dark:border-[#2a3a30] shadow-sm flex flex-col group">
-<div class="relative h-48 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Illegal waste dumping on suburban street" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDO25oGdiu17cB7iBfzSNQF98wTi7DUBjrAhIZkoTD6RqZ0ZlDeVo_vkgrDpCvqT93nuxiYVptS1eody_BbHqCCnSogMMGR4T2GI1_GsTrdS1jwiMo-ZlYs0AP8EIx0xQcKiPAWoker_P45HCf-pY1b7D8Co1Lf2LyCsSsm4JoleuioZ-KT37oWsm8Z_9eni70tt1znKR7ZoZNMW6waDI85wtZCTrgkre75SDKb2GIKjyGIKWQ0PKGuWoJVUQxREtbX8vVvgZZXy59H");'></div>
-<div class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Urgent</div>
-<div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">photo_camera</span> 4 Photos
-                    </div>
-</div>
-<div class="p-5 flex flex-col gap-4 grow">
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-[#111814] dark:text-white text-lg font-bold leading-tight">Illegal Dumping - Oak St</h3>
-<span class="text-[11px] text-[#608a71] font-mono">#RE-2941</span>
-</div>
-<p class="text-[#608a71] dark:text-gray-400 text-sm line-clamp-2">Large pile of construction debris and old furniture blocking the sidewalk near the park entrance.</p>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-[#608a71] text-xs">
-<span class="material-symbols-outlined text-sm">schedule</span>
-<span>Reported 2 hours ago • June 24, 2024</span>
-</div>
-<div class="flex items-center gap-2 text-primary text-xs font-medium cursor-pointer hover:underline">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span data-location="Ottawa, Canada">45.4215° N, 75.6972° W</span>
-</div>
-</div>
-<div class="mt-auto pt-4 border-t border-[#f0f5f2] dark:border-[#2a3a30] flex gap-2">
-<button class="flex-1 bg-primary text-[#111814] text-sm font-bold py-2 rounded-lg hover:brightness-95 transition-all">Mark as Resolved</button>
-<button class="w-10 flex items-center justify-center border border-[#dbe6df] dark:border-[#2a3a30] rounded-lg text-[#608a71] hover:bg-background-light dark:hover:bg-background-dark">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="bg-white dark:bg-[#14261b] rounded-xl overflow-hidden border border-[#dbe6df] dark:border-[#2a3a30] shadow-sm flex flex-col group">
-<div class="relative h-48 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Flickering streetlight at night" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDR-pun-W2nWO4f_yMn4TPnYMWZUcCcTPd7wTiD5ys54zncMTtdX0kHyeIaDNF-16VMPRMXRazF4B8Mfp0nw06LFp4whlxSgDIOu9B28acDZG2mXkpi3KPWv5445Ftdc5zhIuMoFsoMy3y2q3ye6ZNFaSAQlBP31gGNjM0USneLUVVmrSR7MYLn6eykoEA6C_KgyMkzdTFGGxf6oIsAd6nttXGZzNyi64xPBN9aXl_1BfvAvzrRbcupNrNiV7cHbsoaC19KdRiUJxrU");'></div>
-<div class="absolute top-3 left-3 bg-[#f0f5f2] dark:bg-[#1a2e22] text-[#111814] dark:text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded border border-[#dbe6df] dark:border-[#2a3a30]">Infrastructure</div>
-</div>
-<div class="p-5 flex flex-col gap-4 grow">
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-[#111814] dark:text-white text-lg font-bold leading-tight">Broken Streetlight - Main Ave</h3>
-<span class="text-[11px] text-[#608a71] font-mono">#RE-2938</span>
-</div>
-<p class="text-[#608a71] dark:text-gray-400 text-sm line-clamp-2">Light pole #42 is flickering constantly and causing visibility issues at the intersection.</p>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-[#608a71] text-xs">
-<span class="material-symbols-outlined text-sm">schedule</span>
-<span>Reported 5 hours ago • June 24, 2024</span>
-</div>
-<div class="flex items-center gap-2 text-primary text-xs font-medium cursor-pointer hover:underline">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span data-location="Ottawa, Canada">45.4231° N, 75.6911° W</span>
-</div>
-</div>
-<div class="mt-auto pt-4 border-t border-[#f0f5f2] dark:border-[#2a3a30] flex gap-2">
-<button class="flex-1 bg-primary text-[#111814] text-sm font-bold py-2 rounded-lg hover:brightness-95 transition-all">Mark as Resolved</button>
-<button class="w-10 flex items-center justify-center border border-[#dbe6df] dark:border-[#2a3a30] rounded-lg text-[#608a71] hover:bg-background-light dark:hover:bg-background-dark">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="bg-white dark:bg-[#14261b] rounded-xl overflow-hidden border border-[#dbe6df] dark:border-[#2a3a30] shadow-sm flex flex-col group">
-<div class="relative h-48 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Graffiti on park benches and walls" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASqT9NBHQxJ5Rzg7Xzgd0wcVJ_-z68UcC2QvcgzHag-xnCMBpL9t4TiwL8gDcb8vY4D0xhyQqlids7lTB-eW_Z1ooc2vteNYUAkxfl_13UHzmuO2jC0_4IIjhR7rDiqq1y8wamehe2Dbiu9oUebE-WzX0cTtqR3XOBxSbYp5l6RT_yrI_RoFkaqzUd3PrWsoaxfmP7qBpw8o9PJaRyAXmEiRJpYlQU-k7eh6uQqjOjiJxBlh0UqCAx_N8tyspisE1qXT98IkQZcfAg");'></div>
-<div class="absolute top-3 left-3 bg-[#f0f5f2] dark:bg-[#1a2e22] text-[#111814] dark:text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded border border-[#dbe6df] dark:border-[#2a3a30]">Graffiti</div>
-</div>
-<div class="p-5 flex flex-col gap-4 grow">
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-[#111814] dark:text-white text-lg font-bold leading-tight">Graffiti - Central Park</h3>
-<span class="text-[11px] text-[#608a71] font-mono">#RE-2922</span>
-</div>
-<p class="text-[#608a71] dark:text-gray-400 text-sm line-clamp-2">New graffiti tags discovered on several benches and the historical information plaque.</p>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-[#608a71] text-xs">
-<span class="material-symbols-outlined text-sm">schedule</span>
-<span>Reported 1 day ago • June 23, 2024</span>
-</div>
-<div class="flex items-center gap-2 text-primary text-xs font-medium cursor-pointer hover:underline">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span data-location="Ottawa, Canada">45.4198° N, 75.7003° W</span>
-</div>
-</div>
-<div class="mt-auto pt-4 border-t border-[#f0f5f2] dark:border-[#2a3a30] flex gap-2">
-<button class="flex-1 bg-primary text-[#111814] text-sm font-bold py-2 rounded-lg hover:brightness-95 transition-all">Mark as Resolved</button>
-<button class="w-10 flex items-center justify-center border border-[#dbe6df] dark:border-[#2a3a30] rounded-lg text-[#608a71] hover:bg-background-light dark:hover:bg-background-dark">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="bg-white dark:bg-[#14261b] rounded-xl overflow-hidden border border-[#dbe6df] dark:border-[#2a3a30] shadow-sm flex flex-col group">
-<div class="relative h-48 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Overflowing trash bin on a street corner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDn229LpB1aJasis-W5BFo7X_i1apS7VtsKXBVW6QeqzIowjXwlmAMP7sQH_Hx6PquYh1bE-OF0iPBQ9T7ITck0Hiq7cX9sbVm63BdeUbLlkUc7U1PryvplCcnOQdf-w4LdniRUJZzeBuc7AjoJUEP5ppZILIJ6mKZY8XBelCrCzpquv10Szs2CAsGmq8_YwduHjP2Jt5oIEVfOyovOg27phNknCydsc8kTLtkRX3q-cxkfzeOiyAeQJ_oQHr5N99Gbj219LIxkpDsk");'></div>
-<div class="absolute top-3 left-3 bg-[#f0f5f2] dark:bg-[#1a2e22] text-[#111814] dark:text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded border border-[#dbe6df] dark:border-[#2a3a30]">Sanitation</div>
-</div>
-<div class="p-5 flex flex-col gap-4 grow">
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-[#111814] dark:text-white text-lg font-bold leading-tight">Overflowing Bin - 5th St</h3>
-<span class="text-[11px] text-[#608a71] font-mono">#RE-2915</span>
-</div>
-<p class="text-[#608a71] dark:text-gray-400 text-sm line-clamp-2">The public waste bin at the bus stop is completely full and trash is spilling onto the pavement.</p>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-[#608a71] text-xs">
-<span class="material-symbols-outlined text-sm">schedule</span>
-<span>Reported 1 day ago • June 23, 2024</span>
-</div>
-<div class="flex items-center gap-2 text-primary text-xs font-medium cursor-pointer hover:underline">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span data-location="Ottawa, Canada">45.4200° N, 75.6890° W</span>
-</div>
-</div>
-<div class="mt-auto pt-4 border-t border-[#f0f5f2] dark:border-[#2a3a30] flex gap-2">
-<button class="flex-1 bg-primary text-[#111814] text-sm font-bold py-2 rounded-lg hover:brightness-95 transition-all">Mark as Resolved</button>
-<button class="w-10 flex items-center justify-center border border-[#dbe6df] dark:border-[#2a3a30] rounded-lg text-[#608a71] hover:bg-background-light dark:hover:bg-background-dark">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 5 -->
-<div class="bg-white dark:bg-[#14261b] rounded-xl overflow-hidden border border-[#dbe6df] dark:border-[#2a3a30] shadow-sm flex flex-col group">
-<div class="relative h-48 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Large pothole in the middle of a road" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRp03JL7Js5iqgHAorhLb2TWG31wTekz9dOGJWi-Vuwo-9S-epSPx4ixT8IBzZ6qbN2VUTYaQOjlKhKDwrAxUYGw20zjBU4tX_pZ65Eo1gdroprBctuNt3X2SmhWi7_gKi8QLGki6OJONGpTi65vmnUdsUqxGiJ0R_4Bbag-GoIUDJf7euifAOXIorn7uq1tdLNTmdFAlEOdDQk-l6HavxfErCQm06gB7I-JaZ72LuNB6jN6qjOLbIUxnYGU2Ub20I1B_7D3MU5YN_");'></div>
-<div class="absolute top-3 left-3 bg-[#f0f5f2] dark:bg-[#1a2e22] text-[#111814] dark:text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded border border-[#dbe6df] dark:border-[#2a3a30]">Infrastructure</div>
-</div>
-<div class="p-5 flex flex-col gap-4 grow">
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-[#111814] dark:text-white text-lg font-bold leading-tight">Pothole - River Rd</h3>
-<span class="text-[11px] text-[#608a71] font-mono">#RE-2901</span>
-</div>
-<p class="text-[#608a71] dark:text-gray-400 text-sm line-clamp-2">Dangerous pothole approximately 1ft deep on the northbound lane. Cars are swerving to avoid it.</p>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-[#608a71] text-xs">
-<span class="material-symbols-outlined text-sm">schedule</span>
-<span>Reported 2 days ago • June 22, 2024</span>
-</div>
-<div class="flex items-center gap-2 text-primary text-xs font-medium cursor-pointer hover:underline">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span data-location="Ottawa, Canada">45.4250° N, 75.6950° W</span>
-</div>
-</div>
-<div class="mt-auto pt-4 border-t border-[#f0f5f2] dark:border-[#2a3a30] flex gap-2">
-<button class="flex-1 bg-primary text-[#111814] text-sm font-bold py-2 rounded-lg hover:brightness-95 transition-all">Mark as Resolved</button>
-<button class="w-10 flex items-center justify-center border border-[#dbe6df] dark:border-[#2a3a30] rounded-lg text-[#608a71] hover:bg-background-light dark:hover:bg-background-dark">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 6 -->
-<div class="bg-white dark:bg-[#14261b] rounded-xl overflow-hidden border border-[#dbe6df] dark:border-[#2a3a30] shadow-sm flex flex-col group">
-<div class="relative h-48 overflow-hidden">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Water bursting from a broken pipe on street" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtPKCxzn9jX-BJAtXDV7x2c5RJEirJft8_EoPrpckkjnCPZujd3obHZPkfbpdXCLm4_hxRrzPum167H1yli33OguTMY12U7qsBiKuBVNxZCvsrwYkfs8-GizHi6_mlNXTJr-Wq_hqV8mBi6kfXS97fxL9u6BAz_qjgHsKXkoVCQddtW59vgPI03p-jWYGMlPW5UyTt0rv8ehiOMfuLliRswDUz7YD4-Tm777Ldc99-2Cx4DV0VRnLbyLGS4IrIl9EXahoMvAoeRggs");'></div>
-<div class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Critical</div>
-</div>
-<div class="p-5 flex flex-col gap-4 grow">
-<div>
-<div class="flex justify-between items-start mb-1">
-<h3 class="text-[#111814] dark:text-white text-lg font-bold leading-tight">Water Leak - Sunset Blvd</h3>
-<span class="text-[11px] text-[#608a71] font-mono">#RE-2884</span>
-</div>
-<p class="text-[#608a71] dark:text-gray-400 text-sm line-clamp-2">Main water pipe burst. Significant water flooding the street and sidewalk area. Urgent attention needed.</p>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-[#608a71] text-xs">
-<span class="material-symbols-outlined text-sm">schedule</span>
-<span>Reported 3 days ago • June 21, 2024</span>
-</div>
-<div class="flex items-center gap-2 text-primary text-xs font-medium cursor-pointer hover:underline">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span data-location="Ottawa, Canada">45.4180° N, 75.7050° W</span>
-</div>
-</div>
-<div class="mt-auto pt-4 border-t border-[#f0f5f2] dark:border-[#2a3a30] flex gap-2">
-<button class="flex-1 bg-primary text-[#111814] text-sm font-bold py-2 rounded-lg hover:brightness-95 transition-all">Mark as Resolved</button>
-<button class="w-10 flex items-center justify-center border border-[#dbe6df] dark:border-[#2a3a30] rounded-lg text-[#608a71] hover:bg-background-light dark:hover:bg-background-dark">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Pagination -->
-<div class="flex items-center justify-center gap-2 mt-12 py-4">
-<button class="p-2 rounded-lg border border-[#dbe6df] dark:border-[#2a3a30] text-[#608a71] hover:bg-white dark:hover:bg-[#1a2e22]">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="w-10 h-10 rounded-lg bg-primary text-[#111814] font-bold">1</button>
-<button class="w-10 h-10 rounded-lg text-[#608a71] hover:bg-white dark:hover:bg-[#1a2e22] font-medium transition-colors">2</button>
-<button class="w-10 h-10 rounded-lg text-[#608a71] hover:bg-white dark:hover:bg-[#1a2e22] font-medium transition-colors">3</button>
-<span class="text-[#608a71] px-2">...</span>
-<button class="w-10 h-10 rounded-lg text-[#608a71] hover:bg-white dark:hover:bg-[#1a2e22] font-medium transition-colors">12</button>
-<button class="p-2 rounded-lg border border-[#dbe6df] dark:border-[#2a3a30] text-[#608a71] hover:bg-white dark:hover:bg-[#1a2e22]">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</div>
-</main>
-<footer class="mt-20 border-t border-[#dbe6df] dark:border-[#2a3a30] py-10 bg-white dark:bg-[#102217]">
-<div class="max-w-[1280px] mx-auto px-4 text-center">
-<p class="text-[#608a71] text-sm font-medium">© 2026 GreenSweep Municipal Management System. All rights reserved.</p>
-</div>
-</footer>
-</body></html>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="logo">
+          <span class="material-symbols-outlined logo-icon">eco</span>
+          <strong>GreenSweep Admin</strong>
+        </div>
+        <nav>
+          <a href="Home.html">Home</a>
+          <a href="Awarness.html">Awareness</a>
+          <a href="report.html">Report</a>
+          <a href="Dashboard.html">Dashboard</a>
+          <a href="Admin.html" class="active">Admin</a>
+        </nav>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-box">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" placeholder="Search ID or Location" />
+        </div>
+        <button class="btn-primary">Admin Profile</button>
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbtvSeXin6RjA1KqSDzdEmrWJU83Tn0WRSQyYehA15LDl4zl6gN7vuRg0m3MVuTjdx4XeUVNNyVOQAdtWj_5omeFLy7JcSFMrEfTL77-jWs_8DVZGMTe4SG1nRXm6V9Wu5h4FnR15pEm1ddpfqxS4GDkWW2yIHmpFjXAdLAo3sOB9zKfTolB-3hv8G8AOit2T6PjAmgYq4hmBrs74aRQFrpZ8y0x4lPMusguq_JgZG_TcVqjc8Cd4E_KGwrH8i1MYpB-py3KGvNMO"
+          alt="Admin"
+          class="avatar"
+        />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Page Heading -->
+    <div class="page-heading">
+      <div>
+        <h1>Complaint Management Center</h1>
+        <p>Review and resolve environmental reports submitted by citizens.</p>
+      </div>
+      <button class="btn-secondary">
+        <span class="material-symbols-outlined">download</span> Export Data
+      </button>
+    </div>
+
+    <!-- Filters & Tabs -->
+    <div class="filters-panel">
+      <div class="tabs">
+        <a href="#" class="tab">All Reports (248)</a>
+        <a href="#" class="tab active">Pending (42)</a>
+        <a href="#" class="tab">In Progress (15)</a>
+        <a href="#" class="tab">Resolved (191)</a>
+      </div>
+      <div class="filter-row">
+        <button class="filter-btn">
+          <span class="material-symbols-outlined green">priority_high</span>
+          High Urgency
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <button class="filter-btn">
+          <span class="material-symbols-outlined">delete</span>
+          Trash &amp; Litter
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <button class="filter-btn">
+          <span class="material-symbols-outlined">construction</span>
+          Infrastructure
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <button class="filter-btn">
+          <span class="material-symbols-outlined">calendar_today</span>
+          Last 7 Days
+        </button>
+      </div>
+    </div>
+
+    <!-- Complaint Grid -->
+    <div class="cards-grid">
+
+      <!-- Card 1 -->
+      <div class="complaint-card">
+        <div class="card-image">
+          <div class="card-img-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDO25oGdiu17cB7iBfzSNQF98wTi7DUBjrAhIZkoTD6RqZ0ZlDeVo_vkgrDpCvqT93nuxiYVptS1eody_BbHqCCnSogMMGR4T2GI1_GsTrdS1jwiMo-ZlYs0AP8EIx0xQcKiPAWoker_P45HCf-pY1b7D8Co1Lf2LyCsSsm4JoleuioZ-KT37oWsm8Z_9eni70tt1znKR7ZoZNMW6waDI85wtZCTrgkre75SDKb2GIKjyGIKWQ0PKGuWoJVUQxREtbX8vVvgZZXy59H');"></div>
+          <span class="card-tag urgent">Urgent</span>
+          <span class="card-photos">
+            <span class="material-symbols-outlined tiny">photo_camera</span> 4 Photos
+          </span>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3>Illegal Dumping - Oak St</h3>
+            <span class="card-id">#RE-2941</span>
+          </div>
+          <p>Large pile of construction debris and old furniture blocking the sidewalk near the park entrance.</p>
+          <div class="card-meta">
+            <span><span class="material-symbols-outlined tiny">schedule</span> 2 hours ago · June 24, 2024</span>
+            <span class="green-link"><span class="material-symbols-outlined tiny">location_on</span> 45.4215° N, 75.6972° W</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-primary full">Mark as Resolved</button>
+            <button class="btn-icon"><span class="material-symbols-outlined">more_vert</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="complaint-card">
+        <div class="card-image">
+          <div class="card-img-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDR-pun-W2nWO4f_yMn4TPnYMWZUcCcTPd7wTiD5ys54zncMTtdX0kHyeIaDNF-16VMPRMXRazF4B8Mfp0nw06LFp4whlxSgDIOu9B28acDZG2mXkpi3KPWv5445Ftdc5zhIuMoFsoMy3y2q3ye6ZNFaSAQlBP31gGNjM0USneLUVVmrSR7MYLn6eykoEA6C_KgyMkzdTFGGxf6oIsAd6nttXGZzNyi64xPBN9aXl_1BfvAvzrRbcupNrNiV7cHbsoaC19KdRiUJxrU');"></div>
+          <span class="card-tag plain">Infrastructure</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3>Broken Streetlight - Main Ave</h3>
+            <span class="card-id">#RE-2938</span>
+          </div>
+          <p>Light pole #42 is flickering constantly and causing visibility issues at the intersection.</p>
+          <div class="card-meta">
+            <span><span class="material-symbols-outlined tiny">schedule</span> 5 hours ago · June 24, 2024</span>
+            <span class="green-link"><span class="material-symbols-outlined tiny">location_on</span> 45.4231° N, 75.6911° W</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-primary full">Mark as Resolved</button>
+            <button class="btn-icon"><span class="material-symbols-outlined">more_vert</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="complaint-card">
+        <div class="card-image">
+          <div class="card-img-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASqT9NBHQxJ5Rzg7Xzgd0wcVJ_-z68UcC2QvcgzHag-xnCMBpL9t4TiwL8gDcb8vY4D0xhyQqlids7lTB-eW_Z1ooc2vteNYUAkxfl_13UHzmuO2jC0_4IIjhR7rDiqq1y8wamehe2Dbiu9oUebE-WzX0cTtqR3XOBxSbYp5l6RT_yrI_RoFkaqzUd3PrWsoaxfmP7qBpw8o9PJaRyAXmEiRJpYlQU-k7eh6uQqjOjiJxBlh0UqCAx_N8tyspisE1qXT98IkQZcfAg');"></div>
+          <span class="card-tag plain">Graffiti</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3>Graffiti - Central Park</h3>
+            <span class="card-id">#RE-2922</span>
+          </div>
+          <p>New graffiti tags discovered on several benches and the historical information plaque.</p>
+          <div class="card-meta">
+            <span><span class="material-symbols-outlined tiny">schedule</span> 1 day ago · June 23, 2024</span>
+            <span class="green-link"><span class="material-symbols-outlined tiny">location_on</span> 45.4198° N, 75.7003° W</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-primary full">Mark as Resolved</button>
+            <button class="btn-icon"><span class="material-symbols-outlined">more_vert</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="complaint-card">
+        <div class="card-image">
+          <div class="card-img-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDn229LpB1aJasis-W5BFo7X_i1apS7VtsKXBVW6QeqzIowjXwlmAMP7sQH_Hx6PquYh1bE-OF0iPBQ9T7ITck0Hiq7cX9sbVm63BdeUbLlkUc7U1PryvplCcnOQdf-w4LdniRUJZzeBuc7AjoJUEP5ppZILIJ6mKZY8XBelCrCzpquv10Szs2CAsGmq8_YwduHjP2Jt5oIEVfOyovOg27phNknCydsc8kTLtkRX3q-cxkfzeOiyAeQJ_oQHr5N99Gbj219LIxkpDsk');"></div>
+          <span class="card-tag plain">Sanitation</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3>Overflowing Bin - 5th St</h3>
+            <span class="card-id">#RE-2915</span>
+          </div>
+          <p>The public waste bin at the bus stop is completely full and trash is spilling onto the pavement.</p>
+          <div class="card-meta">
+            <span><span class="material-symbols-outlined tiny">schedule</span> 1 day ago · June 23, 2024</span>
+            <span class="green-link"><span class="material-symbols-outlined tiny">location_on</span> 45.4200° N, 75.6890° W</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-primary full">Mark as Resolved</button>
+            <button class="btn-icon"><span class="material-symbols-outlined">more_vert</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="complaint-card">
+        <div class="card-image">
+          <div class="card-img-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRp03JL7Js5iqgHAorhLb2TWG31wTekz9dOGJWi-Vuwo-9S-epSPx4ixT8IBzZ6qbN2VUTYaQOjlKhKDwrAxUYGw20zjBU4tX_pZ65Eo1gdroprBctuNt3X2SmhWi7_gKi8QLGki6OJONGpTi65vmnUdsUqxGiJ0R_4Bbag-GoIUDJf7euifAOXIorn7uq1tdLNTmdFAlEOdDQk-l6HavxfErCQm06gB7I-JaZ72LuNB6jN6qjOLbIUxnYGU2Ub20I1B_7D3MU5YN_');"></div>
+          <span class="card-tag plain">Infrastructure</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3>Pothole - River Rd</h3>
+            <span class="card-id">#RE-2901</span>
+          </div>
+          <p>Dangerous pothole approximately 1ft deep on the northbound lane. Cars are swerving to avoid it.</p>
+          <div class="card-meta">
+            <span><span class="material-symbols-outlined tiny">schedule</span> 2 days ago · June 22, 2024</span>
+            <span class="green-link"><span class="material-symbols-outlined tiny">location_on</span> 45.4250° N, 75.6950° W</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-primary full">Mark as Resolved</button>
+            <button class="btn-icon"><span class="material-symbols-outlined">more_vert</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="complaint-card">
+        <div class="card-image">
+          <div class="card-img-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtPKCxzn9jX-BJAtXDV7x2c5RJEirJft8_EoPrpckkjnCPZujd3obHZPkfbpdXCLm4_hxRrzPum167H1yli33OguTMY12U7qsBiKuBVNxZCvsrwYkfs8-GizHi6_mlNXTJr-Wq_hqV8mBi6kfXS97fxL9u6BAz_qjgHsKXkoVCQddtW59vgPI03p-jWYGMlPW5UyTt0rv8ehiOMfuLliRswDUz7YD4-Tm777Ldc99-2Cx4DV0VRnLbyLGS4IrIl9EXahoMvAoeRggs');"></div>
+          <span class="card-tag urgent">Critical</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3>Water Leak - Sunset Blvd</h3>
+            <span class="card-id">#RE-2884</span>
+          </div>
+          <p>Main water pipe burst. Significant water flooding the street and sidewalk area. Urgent attention needed.</p>
+          <div class="card-meta">
+            <span><span class="material-symbols-outlined tiny">schedule</span> 3 days ago · June 21, 2024</span>
+            <span class="green-link"><span class="material-symbols-outlined tiny">location_on</span> 45.4180° N, 75.7050° W</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-primary full">Mark as Resolved</button>
+            <button class="btn-icon"><span class="material-symbols-outlined">more_vert</span></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="page-btn">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <span class="page-dots">...</span>
+      <button class="page-btn">12</button>
+      <button class="page-btn">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 GreenSweep Municipal Management System. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

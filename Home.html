@@ -1,298 +1,219 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GreenSweep - Smart Environmental Reporting</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenSweep - Smart Environmental Reporting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Home.css" />
+</head>
+<body>
 
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="css/home.css" rel="stylesheet"/>
-></head>
-<body class="bg-background-light dark:bg-background-dark text-[#111814] dark:text-white transition-colors duration-300">
-<!-- Navigation -->
-<header class="sticky top-0 z-50 w-full border-b border-solid border-[#dbe6df] dark:border-[#2a3d31] bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-<div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="flex items-center justify-center bg-primary rounded-lg p-1.5">
-<span class="material-symbols-outlined text-background-dark text-xl">eco</span>
-</div>
-<h2 class="text-[#111814] dark:text-white text-xl font-bold leading-tight tracking-tight">GreenSweep</h2>
-</div>
+  <!-- Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo">
+        <div class="logo-icon">
+          <span class="material-symbols-outlined">eco</span>
+        </div>
+        <strong>GreenSweep</strong>
+      </div>
 
-<!-- Desktop Navigation -->
-<nav class="hidden sm:flex items-center gap-10">
-<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Home.html">Home</a>
-<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Awareness.html">Awareness</a>
-<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="report.html">Report</a>
-<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Dashboard.html">Dashboard</a>
-<a class="text-sm font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300" href="Admin.html">Admin</a>
-</nav>
+      <nav class="main-nav">
+        <a href="Home.html" class="active">Home</a>
+        <a href="Awarness.html">Awareness</a>
+        <a href="report.html">Report</a>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="Admin.html">Admin</a>
+      </nav>
 
-<!-- Mobile Menu Checkbox (hidden) -->
-<input type="checkbox" id="mobile-menu-toggle" class="hidden">
-
-<!-- Mobile Menu Button (label for checkbox) -->
-<label for="mobile-menu-toggle" class="sm:hidden flex items-center justify-center p-2 rounded-lg hover:bg-[#f0f5f2] dark:hover:bg-[#1a2e21] transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-[#111814] dark:text-white">menu</span>
-</label>
-
-<div class="hidden sm:flex items-center gap-3">
-<button class="min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f5f2] dark:bg-[#1a2e21] text-[#111814] dark:text-white text-sm font-bold transition-all hover:bg-[#e2ede6] hover:text-primary">
-Log In
-</button>
-<button class="interactive-hover-btn" style="width: 120px; height: 40px; background-color: #0df269; border: none;">
-    <span class="btn-text" style="color: #102217;">Report Now</span>
-    <div class="btn-hover-content" style="color: #102217;">
-        <span>Report Now</span>
-        <span class="btn-arrow"></span>
+      <div class="nav-actions">
+        <button class="btn-secondary">Log In</button>
+        <a href="report.html" class="btn-primary">Report Now →</a>
+      </div>
     </div>
-    <div class="btn-background" style="background-color: #0df269;"></div>
-</button>
-</div>
-</div>
+  </header>
 
-<!-- Mobile Menu Dropdown (controlled by checkbox) -->
-<div class="sm:hidden hidden mobile-menu px-6 py-4 bg-white dark:bg-background-dark border-t border-[#dbe6df] dark:border-[#2a3d31]" id="mobile-menu">
-<nav class="flex flex-col gap-4">
-<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Home.html">Home</a>
-<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Awareness.html">Awareness</a>
-<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="report.html">Report</a>
-<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Dashboard.html">Dashboard</a>
-<a class="text-base font-medium text-[#111814] dark:text-white hover:text-primary transition-colors duration-300 py-2" href="Admin.html">Admin</a>
-<div class="flex flex-col gap-3 pt-4 border-t border-[#dbe6df] dark:border-[#2a3d31]">
-<button class="w-full cursor-pointer items-center justify-center rounded-lg h-10 bg-[#f0f5f2] dark:bg-[#1a2e21] text-[#111814] dark:text-white text-sm font-bold transition-all hover:bg-[#e2ede6] hover:text-primary">
-Log In
-</button>
-<button class="interactive-hover-btn w-full" style="background-color: #0df269; border: none; width: 100%;">
-    <span class="btn-text" style="color: #102217;">Report Now</span>
-    <div class="btn-hover-content" style="color: #102217;">
-        <span>Report Now</span>
-        <span class="btn-arrow"></span>
-    </div>
-    <div class="btn-background" style="background-color: #0df269;"></div>
-</button>
-</div>
-</nav>
-</div>
-</header>
-<main class="max-w-[1200px] mx-auto px-6">
-<!-- Hero Section -->
-<section class="py-12 md:py-20">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="flex flex-col gap-8">
-<div class="flex flex-col gap-4">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit text-xs font-bold uppercase tracking-wider">
-<span class="material-symbols-outlined text-sm">auto_awesome</span>
-                            Smart City Initiative
-                        </div>
-<h1 class="text-[#111814] dark:text-white text-5xl md:text-6xl font-black leading-tight tracking-[-0.03em]">
-                            Cleaner Streets, <br/><span class="text-primary">Stronger Communities.</span>
-</h1>
-<p class="text-lg text-[#608a71] dark:text-gray-400 max-w-[500px] leading-relaxed">
-                            Report environmental issues in seconds and help your city thrive. Join thousands of citizens making a difference today.
-                        </p>
-</div>
-<div class="flex flex-col sm:flex-row gap-4">
-<button class="interactive-hover-btn" style="width: auto; padding-left: 2rem; padding-right: 2rem; height: 3.5rem; background-color: #0df269; border: none;">
-    <span class="btn-text" style="color: #102217;">Report Now</span>
-    <div class="btn-hover-content" style="color: #102217;">
-        <span>Report Now</span>
-        <span class="btn-arrow"></span>
-    </div>
-    <div class="btn-background" style="background-color: #0df269;"></div>
-</button>
-<button class="interactive-hover-btn" style="width: auto; padding-left: 2rem; padding-right: 2rem; height: 3.5rem; background-color: transparent; border-width: 2px;">
-    <span class="btn-text" style="color: #111814;">Learn More</span>
-    <div class="btn-hover-content" style="color: #111814;">
-        <span>Learn More</span>
-        <span class="btn-arrow"></span>
-    </div>
-    <div class="btn-background" style="background-color: #0df269;"></div>
-</button>
-</div>
-</div>
+  <main class="container">
 
-<div class="relative">
-<div class="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-30"></div>
-<div class="relative w-full aspect-[4/3] bg-center bg-no-repeat bg-cover rounded-2xl shadow-2xl border-4 border-white dark:border-[#1a2e21]" data-alt="Happy citizens in a clean green urban park environment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvtgZRgDgyb2vQMnALmamk-cXRFVjPZE0IAHqPvM7H8gI9cHujlW3Uz3k1wFzaHOIV061Ksl5RiC5iuO5ims2DYIU7c59zyIDSAIInCYmTslg2SeYwK48YpHiPBZMdeC0QKexqcQmWgo18Ism0etqvlzcIl8kGlOHIx_AeRSCoAcHozMHsUzxfDOq5zgK5GvBWI-C4XEfpZdfvGtb0HdrS5jvRUFhIfEz3qMRwmCD2JNYoYP0ZaIeRLU2abGsh0uK6FTMzMwTc_vzD");'>
-</div>
-</div>
-</div>
-</section>
-<!-- Stats Section -->
-<section class="py-10" id="impact">
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-<div class="flex flex-col gap-3 rounded-2xl p-8 bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] shadow-sm">
-<div class="flex items-center justify-between">
-<p class="text-[#608a71] text-sm font-semibold uppercase tracking-wider">Reports Resolved</p>
-<span class="material-symbols-outlined text-primary">check_circle</span>
-</div>
-<p class="text-[#111814] dark:text-white text-4xl font-black">5,000+</p>
-<div class="flex items-center gap-1 text-[#078829] font-bold text-sm bg-primary/10 px-2 py-0.5 rounded w-fit">
-<span class="material-symbols-outlined text-sm">trending_up</span>
-                        +12%
-                    </div>
-</div>
-<div class="flex flex-col gap-3 rounded-2xl p-8 bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] shadow-sm">
-<div class="flex items-center justify-between">
-<p class="text-[#608a71] text-sm font-semibold uppercase tracking-wider">Active Users</p>
-<span class="material-symbols-outlined text-primary">groups</span>
-</div>
-<p class="text-[#111814] dark:text-white text-4xl font-black">12,000+</p>
-<div class="flex items-center gap-1 text-[#078829] font-bold text-sm bg-primary/10 px-2 py-0.5 rounded w-fit">
-<span class="material-symbols-outlined text-sm">trending_up</span>
-                        +8%
-                    </div>
-</div>
-<div class="flex flex-col gap-3 rounded-2xl p-8 bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] shadow-sm">
-<div class="flex items-center justify-between">
-<p class="text-[#608a71] text-sm font-semibold uppercase tracking-wider">Cities Partnered</p>
-<span class="material-symbols-outlined text-primary">location_city</span>
-</div>
-<p class="text-[#111814] dark:text-white text-4xl font-black">45</p>
-<div class="flex items-center gap-1 text-[#078829] font-bold text-sm bg-primary/10 px-2 py-0.5 rounded w-fit">
-<span class="material-symbols-outlined text-sm">trending_up</span>
-                        +5%
-                    </div>
-</div>
-</div>
-</section>
-<!-- Feature Section - How it Works -->
-<section class="py-20" id="how-it-works">
-<div class="flex flex-col items-center text-center gap-4 mb-16">
-<h2 class="text-4xl font-black text-[#111814] dark:text-white tracking-tight">How it Works</h2>
-<p class="text-[#608a71] dark:text-gray-400 text-lg max-w-2xl">
-                    Making your city cleaner is as simple as three easy steps. We handle the communication with the right local departments.
-                </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="group flex flex-col items-center text-center gap-6 p-8 rounded-2xl bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] hover:border-primary transition-all shadow-sm">
-<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
-<span class="material-symbols-outlined text-3xl text-primary group-hover:text-background-dark">photo_camera</span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="text-xl font-bold text-[#111814] dark:text-white">Snap a Photo</h3>
-<p class="text-[#608a71] dark:text-gray-400">Capture the environmental issue directly through our intuitive mobile app or web platform.</p>
-</div>
-</div>
-<div class="group flex flex-col items-center text-center gap-6 p-8 rounded-2xl bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] hover:border-primary transition-all shadow-sm">
-<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
-<span class="material-symbols-outlined text-3xl text-primary group-hover:text-background-dark">send</span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="text-xl font-bold text-[#111814] dark:text-white">Submit Report</h3>
-<p class="text-[#608a71] dark:text-gray-400">Provide a location and category to notify the relevant municipal authorities automatically.</p>
-</div>
-</div>
-<div class="group flex flex-col items-center text-center gap-6 p-8 rounded-2xl bg-white dark:bg-background-dark border border-[#dbe6df] dark:border-[#2a3d31] hover:border-primary transition-all shadow-sm">
-<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
-<span class="material-symbols-outlined text-3xl text-primary group-hover:text-background-dark">map</span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="text-xl font-bold text-[#111814] dark:text-white">Track Progress</h3>
-<p class="text-[#608a71] dark:text-gray-400">Get real-time updates as your report is reviewed, scheduled, and resolved by the city.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Authorities Section -->
-<section class="py-20 rounded-3xl bg-[#111814] dark:bg-[#08110b] text-white overflow-hidden relative mb-20" id="authorities">
-<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/10 blur-[100px] pointer-events-none"></div>
-<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 md:px-16">
-<div class="flex flex-col gap-8">
-<div class="flex flex-col gap-4">
-<h2 class="text-4xl font-black tracking-tight">For Municipal Authorities</h2>
-<p class="text-lg text-gray-400 leading-relaxed">
-                            Empower your city with data-driven insights and streamlined reporting workflows. Reduce response times and increase citizen satisfaction.
-                        </p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-<div class="flex flex-col gap-3">
-<span class="material-symbols-outlined text-primary text-3xl">dashboard</span>
-<h4 class="text-lg font-bold">Real-time Dashboard</h4>
-<p class="text-sm text-gray-400">Monitor reports across the city in real-time with an integrated management system.</p>
-</div>
-<div class="flex flex-col gap-3">
-<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
-<h4 class="text-lg font-bold">Data-Driven Planning</h4>
-<p class="text-sm text-gray-400">Use historical data to identify problem areas and allocate resources more effectively.</p>
-</div>
-</div>
-<button class="interactive-hover-btn" style="width: auto; padding-left: 2rem; padding-right: 2rem; height: 3rem; background-color: #0df269; border: none;">
-    <span class="btn-text" style="color: #102217;">Partner with Us</span>
-    <div class="btn-hover-content" style="color: #102217;">
-        <span>Partner with Us</span>
-        <span class="btn-arrow"></span>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <div class="badge">
+          <span class="material-symbols-outlined tiny">auto_awesome</span>
+          Smart City Initiative
+        </div>
+        <h1>Cleaner Streets,<br><span class="text-green">Stronger Communities.</span></h1>
+        <p>
+          Report environmental issues in seconds and help your city thrive.
+          Join thousands of citizens making a difference today.
+        </p>
+        <div class="hero-btns">
+          <a href="report.html" class="btn-primary large">Report Now →</a>
+          <a href="#how-it-works" class="btn-outline large">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div
+          class="hero-image"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvtgZRgDgyb2vQMnALmamk-cXRFVjPZE0IAHqPvM7H8gI9cHujlW3Uz3k1wFzaHOIV061Ksl5RiC5iuO5ims2DYIU7c59zyIDSAIInCYmTslg2SeYwK48YpHiPBZMdeC0QKexqcQmWgo18Ism0etqvlzcIl8kGlOHIx_AeRSCoAcHozMHsUzxfDOq5zgK5GvBWI-C4XEfpZdfvGtb0HdrS5jvRUFhIfEz3qMRwmCD2JNYoYP0ZaIeRLU2abGsh0uK6FTMzMwTc_vzD');"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="impact">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Reports Resolved</span>
+            <span class="material-symbols-outlined green">check_circle</span>
+          </div>
+          <p class="stat-num">5,000+</p>
+          <span class="trend-badge">
+            <span class="material-symbols-outlined tiny">trending_up</span> +12%
+          </span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Active Users</span>
+            <span class="material-symbols-outlined green">groups</span>
+          </div>
+          <p class="stat-num">12,000+</p>
+          <span class="trend-badge">
+            <span class="material-symbols-outlined tiny">trending_up</span> +8%
+          </span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Cities Partnered</span>
+            <span class="material-symbols-outlined green">location_city</span>
+          </div>
+          <p class="stat-num">45</p>
+          <span class="trend-badge">
+            <span class="material-symbols-outlined tiny">trending_up</span> +5%
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="section-heading">
+        <h2>How it Works</h2>
+        <p>Making your city cleaner is as simple as three easy steps. We handle the communication with the right local departments.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-icon">
+            <span class="material-symbols-outlined">photo_camera</span>
+          </div>
+          <h3>Snap a Photo</h3>
+          <p>Capture the environmental issue directly through our intuitive mobile app or web platform.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <span class="material-symbols-outlined">send</span>
+          </div>
+          <h3>Submit Report</h3>
+          <p>Provide a location and category to notify the relevant municipal authorities automatically.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <span class="material-symbols-outlined">map</span>
+          </div>
+          <h3>Track Progress</h3>
+          <p>Get real-time updates as your report is reviewed, scheduled, and resolved by the city.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authorities Section -->
+    <section class="authorities-section" id="authorities">
+      <div class="auth-content">
+        <h2>For Municipal Authorities</h2>
+        <p>Empower your city with data-driven insights and streamlined reporting workflows. Reduce response times and increase citizen satisfaction.</p>
+
+        <div class="auth-features">
+          <div class="auth-feature">
+            <span class="material-symbols-outlined green large-icon">dashboard</span>
+            <h4>Real-time Dashboard</h4>
+            <p>Monitor reports across the city in real-time with an integrated management system.</p>
+          </div>
+          <div class="auth-feature">
+            <span class="material-symbols-outlined green large-icon">analytics</span>
+            <h4>Data-Driven Planning</h4>
+            <p>Use historical data to identify problem areas and allocate resources more effectively.</p>
+          </div>
+        </div>
+
+        <a href="#" class="btn-primary large">Partner with Us →</a>
+      </div>
+
+      <div class="auth-images">
+        <div
+          class="auth-img"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIYzkZ_wfSbgQcRwcHmUcRaDQhKU7MmmpFL1PB5Jgp__bRVEY5XC4qunCAYRxUXDcuWVyX60onqpDgyFN3eMWSWnV3nsYBN7AMb4Wm3wL1fitWxffGAEBm-o1-SHo4W2azhNI_ElVcMpIGNm3FgrelHN7YVkafbm3U18-rCCyycvgtXILEE3GGkd-ZiFRjdgpPmkL98a0vHKr7rUFFXrv-Y1PRxuK4Y2QaNScFJ5tuVg48l0LS_50LzQpIPeFHQdoHXxZzeXQKP0w8');"
+        ></div>
+        <div
+          class="auth-img offset"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaD0TfrpeWmlZ-bXTBHhWB2FU_erdi4_ei_gLZWrkx7TAO0sw2mA6XBn6e_ue7T75QGn6AdKw2_Vvu93cwqjbhUDl5HWmLO6dtk1LurVZrrDan5Ue8PR5zZtvsETCyQ-xVIWu22K3kOJbUmbAiXrlIyxV3ptKhgTVLKaiiqiANusjU4odHRQdT7oLZFV4lJfaOlvHzJQig77qowbpIioWkT3OO-44BcEFpVh3OebqEwtLafKBUvKgOlsLipIbul5qetRGVCcis0RHC');"
+        ></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><span class="material-symbols-outlined">eco</span></div>
+          <strong>GreenSweep</strong>
+        </div>
+        <p>Building smarter, cleaner, and more sustainable cities through citizen engagement and modern technology.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#">How it Works</a>
+        <a href="#">Mobile App</a>
+        <a href="#">Impact Report</a>
+        <a href="#">Pricing</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Partner Program</a>
+        <a href="#">Press Kit</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <p class="sub-text">Get updates on local environmental projects.</p>
+        <div class="subscribe-row">
+          <input type="email" placeholder="Your email" />
+          <button class="btn-primary">
+            <span class="material-symbols-outlined">mail</span>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="btn-background" style="background-color: #0df269;"></div>
-</button>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="aspect-square bg-white/5 rounded-2xl overflow-hidden border border-white/10 group">
-<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Digital city dashboard with heatmaps and statistics" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIYzkZ_wfSbgQcRwcHmUcRaDQhKU7MmmpFL1PB5Jgp__bRVEY5XC4qunCAYRxUXDcuWVyX60onqpDgyFN3eMWSWnV3nsYBN7AMb4Wm3wL1fitWxffGAEBm-o1-SHo4W2azhNI_ElVcMpIGNm3FgrelHN7YVkafbm3U18-rCCyycvgtXILEE3GGkd-ZiFRjdgpPmkL98a0vHKr7rUFFXrv-Y1PRxuK4Y2QaNScFJ5tuVg48l0LS_50LzQpIPeFHQdoHXxZzeXQKP0w8");'></div>
-</div>
-<div class="aspect-square bg-white/5 rounded-2xl overflow-hidden border border-white/10 mt-8 group">
-<div class="w-full h-full bg-center bg-cover transition-transform group-hover:scale-110" data-alt="Urban planner looking at city map data on tablet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaD0TfrpeWmlZ-bXTBHhWB2FU_erdi4_ei_gLZWrkx7TAO0sw2mA6XBn6e_ue7T75QGn6AdKw2_Vvu93cwqjbhUDl5HWmLO6dtk1LurVZrrDan5Ue8PR5zZtvsETCyQ-xVIWu22K3kOJbUmbAiXrlIyxV3ptKhgTVLKaiiqiANusjU4odHRQdT7oLZFV4lJfaOlvHzJQig77qowbpIioWkT3OO-44BcEFpVh3OebqEwtLafKBUvKgOlsLipIbul5qetRGVCcis0RHC");'></div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-white dark:bg-background-dark border-t border-[#dbe6df] dark:border-[#2a3d31] pt-16 pb-8">
-<div class="max-w-[1200px] mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
-<div class="flex items-center gap-2">
-<div class="flex items-center justify-center bg-primary rounded-lg p-1">
-<span class="material-symbols-outlined text-background-dark text-lg">eco</span>
-</div>
-<h2 class="text-[#111814] dark:text-white text-xl font-bold tracking-tight">GreenSweep</h2>
-</div>
-<p class="text-sm text-[#608a71] dark:text-gray-400 leading-relaxed">
-                        Building smarter, cleaner, and more sustainable cities through citizen engagement and modern technology.
-                    </p>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-bold">Platform</h4>
-<nav class="flex flex-col gap-2">
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">How it Works</a>
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Mobile App</a>
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Impact Report</a>
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Pricing</a>
-</nav>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-bold">Company</h4>
-<nav class="flex flex-col gap-2">
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">About Us</a>
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Partner Program</a>
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Press Kit</a>
-<a class="text-sm text-[#608a71] dark:text-gray-400 hover:text-primary transition-colors" href="#">Contact</a>
-</nav>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-bold">Subscribe</h4>
-<p class="text-sm text-[#608a71] dark:text-gray-400">Get updates on local environmental projects.</p>
-<div class="flex gap-2">
-<input class="w-full rounded-lg bg-background-light dark:bg-[#1a2e21] border-[#dbe6df] dark:border-[#2a3d31] text-sm px-4 py-2 focus:ring-primary focus:border-primary" placeholder="Your email" type="email"/>
-<button class="bg-primary text-background-dark p-2 rounded-lg hover:brightness-105 transition-all">
-<span class="material-symbols-outlined">mail</span>
-</button>
-</div>
-</div>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#dbe6df] dark:border-[#2a3d31] gap-4">
-<p class="text-xs text-[#608a71] dark:text-gray-400">© 2026 GreenSweep Inc. All rights reserved.</p>
-<div class="flex gap-6">
-<a class="text-xs text-[#608a71] dark:text-gray-400 hover:text-primary" href="#">Privacy Policy</a>
-<a class="text-xs text-[#608a71] dark:text-gray-400 hover:text-primary" href="#">Terms of Service</a>
-<a class="text-xs text-[#608a71] dark:text-gray-400 hover:text-primary" href="#">Cookie Policy</a>
-</div>
-</div>
-</div>
-</footer>
+
+    <div class="footer-bottom">
+      <span>© 2026 GreenSweep Inc. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

@@ -1,187 +1,191 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Report Illegal Dumping | GreenSweep</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-
-<link href="css/Report.css" rel="stylesheet"/>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report Illegal Dumping | GreenSweep</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Report.css" />
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark min-h-screen text-[#111814] dark:text-white transition-colors duration-200">
-<!-- Top Navigation Bar -->
-<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-16">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-xl">eco</span>
-</div>
-<h1 class="text-xl font-bold tracking-tight">GreenSweep</h1>
-</div>
-<nav class="hidden md:flex items-center gap-10">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Home.html">Home</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Awarness.html">Awareness</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="report.html">Report</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Dashboard.html">Dashboard</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Admin.html">Admin</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<div class="h-10 w-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="User profile avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDe6M9pdCWIqio17-dlBNmxBwpm3VLSpnxLX1-PM4KaxIiWKbSJPmCanWqqKcNCHA-_kvPQf4EbPNPRKw7ghSnTDsDxDGfj2qDYz2IElca12MUoj__VZFWvglbaf-jSd9K2TJEpt4Ohxug85SXvJ7SqO1OQk1baHYGxJi9qwJiujVYLgBsPDVEeZCfFZ5hd9l83v4HJpBCBjdkzIbSBsiQruYR-JzbKObOTH_SptI989eHJR5Ic-UuFCU60Siu22fPwP6rYr4dxIiGi");'></div>
-</div>
-</div>
-</div>
-</header>
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<!-- Breadcrumbs -->
-<div class="flex items-center gap-2 mb-6">
-<a class="text-gray-500 hover:text-primary text-sm font-medium transition-colors" href="#">Home</a>
-<span class="material-symbols-outlined text-gray-400 text-sm">chevron_right</span>
-<span class="text-[#111814] dark:text-gray-200 text-sm font-semibold">Report Illegal Dumping</span>
-</div>
-<!-- Page Heading -->
-<div class="mb-10">
-<h2 class="text-4xl font-black tracking-tight mb-2">Report Illegal Dumping</h2>
-<p class="text-gray-500 dark:text-gray-400 text-lg max-w-2xl">
-                Help us keep GreenSweeo beautiful by pinpointing waste locations and providing details for our cleanup crews.
-            </p>
-</div>
-<!-- Content Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Left Column: Form Details -->
-<div class="lg:col-span-7 flex flex-col gap-8">
-<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
-<div class="flex items-center gap-2 mb-6">
-<span class="material-symbols-outlined text-primary">description</span>
-<h3 class="text-xl font-bold">Incident Details</h3>
-</div>
-<div class="space-y-6">
-<!-- Waste Category -->
-<div class="flex flex-col gap-2">
-<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Waste Category</label>
-<div class="relative">
-<select class="w-full h-12 pl-4 pr-10 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#102217] appearance-none focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
-<option value="">Select waste type...</option>
-<option value="construction">Construction Debris</option>
-<option value="hazardous">Hazardous Waste / Chemicals</option>
-<option value="furniture">Furniture / Large Appliances</option>
-<option value="tires">Automotive / Tires</option>
-<option value="trash">General Household Trash</option>
-</select>
-<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">expand_more</span>
-</div>
-</div>
-<!-- Description -->
-<div class="flex flex-col gap-2">
-<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Detailed Description</label>
-<textarea class="w-full p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#102217] focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none" placeholder="Tell us more about the size, type, or accessibility of the dumping..." rows="5"></textarea>
-</div>
-</div>
-</section>
-<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
-<div class="flex items-center gap-2 mb-6">
-<span class="material-symbols-outlined text-primary">photo_camera</span>
-<h3 class="text-xl font-bold">Visual Evidence</h3>
-</div>
-<!-- File Upload Zone -->
-<div class="border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl p-10 flex flex-col items-center justify-center hover:border-primary transition-colors group cursor-pointer">
-<div class="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-3xl">upload_file</span>
-</div>
-<p class="text-base font-semibold mb-1">Upload photos of the waste</p>
-<p class="text-sm text-gray-500">Drag and drop or click to browse</p>
-<p class="text-xs text-gray-400 mt-4 italic">Max 5 images. PNG, JPG formats allowed.</p>
-</div>
-</section>
-</div>
-<!-- Right Column: Map and Metadata -->
-<div class="lg:col-span-5 flex flex-col gap-8">
-<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden h-full flex flex-col">
-<div class="p-6 border-b border-gray-100 dark:border-gray-800">
-<div class="flex items-center justify-between mb-2">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">location_on</span>
-<h3 class="text-xl font-bold">Location</h3>
-</div>
-<span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded uppercase tracking-wider">GPS Active</span>
-</div>
-<p class="text-sm text-gray-500">Drag the pin to the exact location of the dumping site.</p>
-</div>
-<!-- Map Component Placeholder -->
-<div class="relative flex-1 min-h-[400px] bg-gray-200 dark:bg-gray-800">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="Interactive city map with navigation overlay" data-location="San Francisco" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1");'></div>
-<!-- Map Pin Overlay UI -->
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="flex flex-col items-center -translate-y-6">
-<div class="bg-white dark:bg-background-dark px-3 py-1.5 rounded-lg shadow-xl border border-gray-100 dark:border-gray-800 mb-2">
-<p class="text-[10px] font-bold uppercase text-gray-500">Selected Location</p>
-<p class="text-xs font-semibold">37.7749° N, 122.4194° W</p>
-</div>
-<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg">location_on</span>
-<div class="w-3 h-1.5 bg-black/20 rounded-full blur-[2px] mt-1"></div>
-</div>
-</div>
-<!-- Map Controls -->
-<div class="absolute bottom-4 right-4 flex flex-col gap-2">
-<button class="w-10 h-10 bg-white dark:bg-background-dark rounded-lg shadow-md flex items-center justify-center text-gray-700 dark:text-gray-200">
-<span class="material-symbols-outlined">add</span>
-</button>
-<button class="w-10 h-10 bg-white dark:bg-background-dark rounded-lg shadow-md flex items-center justify-center text-gray-700 dark:text-gray-200">
-<span class="material-symbols-outlined">remove</span>
-</button>
-<button class="w-10 h-10 bg-white dark:bg-background-dark rounded-lg shadow-md flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">my_location</span>
-</button>
-</div>
-</div>
-<div class="p-4 bg-gray-50 dark:bg-[#14261b]">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-gray-400">info</span>
-<p class="text-xs text-gray-500">Your address will be automatically detected but can be adjusted manually if needed.</p>
-</div>
-</div>
-</section>
-<!-- Actions Card -->
-<section class="bg-white dark:bg-[#1a2e21] rounded-xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
-<div class="flex flex-col gap-4">
-<button class="w-full bg-primary hover:bg-primary/90 text-[#111814] font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
-<span class="material-symbols-outlined">send</span>
-                            Submit Final Report
-                        </button>
-<div class="flex gap-4">
-<button class="flex-1 bg-gray-100 dark:bg-[#102217] hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold py-3 rounded-xl transition-all flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm">save</span>
-                                Save Draft
-                            </button>
-<button class="px-4 bg-transparent border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 py-3 rounded-xl transition-all">
-                                Cancel
-                            </button>
-</div>
-</div>
-</section>
-</div>
-</div>
-<!-- Footer / Progress Meta -->
-<footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<span class="text-sm font-medium">Reporting anonymously</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<span class="text-sm font-medium">Auto-save: 2 min ago</span>
-</div>
-</div>
-<p class="text-sm text-gray-400">© 2026 GreenSweep Environmental Services. All rights reserved.</p>
-</footer>
-</main>
-</body></html>
+<body>
+
+  <!-- Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo">
+        <div class="logo-icon">
+          <span class="material-symbols-outlined">eco</span>
+        </div>
+        <strong>GreenSweep</strong>
+      </div>
+
+      <nav>
+        <a href="Home.html">Home</a>
+        <a href="Awarness.html">Awareness</a>
+        <a href="report.html" class="active">Report</a>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="Admin.html">Admin</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="icon-btn">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6M9pdCWIqio17-dlBNmxBwpm3VLSpnxLX1-PM4KaxIiWKbSJPmCanWqqKcNCHA-_kvPQf4EbPNPRKw7ghSnTDsDxDGfj2qDYz2IElca12MUoj__VZFWvglbaf-jSd9K2TJEpt4Ohxug85SXvJ7SqO1OQk1baHYGxJi9qwJiujVYLgBsPDVEeZCfFZ5hd9l83v4HJpBCBjdkzIbSBsiQruYR-JzbKObOTH_SptI989eHJR5Ic-UuFCU60Siu22fPwP6rYr4dxIiGi"
+          alt="User"
+          class="avatar"
+        />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb">
+      <a href="Home.html">Home</a>
+      <span class="material-symbols-outlined tiny">chevron_right</span>
+      <span>Report Illegal Dumping</span>
+    </div>
+
+    <!-- Page Heading -->
+    <div class="page-heading">
+      <h1>Report Illegal Dumping</h1>
+      <p>Help us keep GreenSweep beautiful by pinpointing waste locations and providing details for our cleanup crews.</p>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="report-grid">
+
+      <!-- Left Column -->
+      <div class="left-col">
+
+        <!-- Incident Details -->
+        <section class="card">
+          <div class="card-section-title">
+            <span class="material-symbols-outlined green">description</span>
+            <h2>Incident Details</h2>
+          </div>
+
+          <div class="form-group">
+            <label>Waste Category</label>
+            <div class="select-wrap">
+              <select>
+                <option value="">Select waste type...</option>
+                <option value="construction">Construction Debris</option>
+                <option value="hazardous">Hazardous Waste / Chemicals</option>
+                <option value="furniture">Furniture / Large Appliances</option>
+                <option value="tires">Automotive / Tires</option>
+                <option value="trash">General Household Trash</option>
+              </select>
+              <span class="material-symbols-outlined select-icon">expand_more</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Detailed Description</label>
+            <textarea
+              rows="5"
+              placeholder="Tell us more about the size, type, or accessibility of the dumping..."
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- Visual Evidence -->
+        <section class="card">
+          <div class="card-section-title">
+            <span class="material-symbols-outlined green">photo_camera</span>
+            <h2>Visual Evidence</h2>
+          </div>
+
+          <div class="upload-zone">
+            <div class="upload-icon">
+              <span class="material-symbols-outlined">upload_file</span>
+            </div>
+            <p class="upload-title">Upload photos of the waste</p>
+            <p class="upload-sub">Drag and drop or click to browse</p>
+            <p class="upload-note">Max 5 images. PNG, JPG formats allowed.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-col">
+
+        <!-- Location Map -->
+        <section class="card map-section">
+          <div class="map-card-header">
+            <div class="card-section-title">
+              <span class="material-symbols-outlined green">location_on</span>
+              <h2>Location</h2>
+            </div>
+            <span class="gps-badge">GPS Active</span>
+          </div>
+          <p class="map-desc">Drag the pin to the exact location of the dumping site.</p>
+
+          <div class="map-area">
+            <div
+              class="map-bg"
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1');"
+            ></div>
+
+            <!-- Pin Overlay -->
+            <div class="map-pin-overlay">
+              <div class="map-pin-label">
+                <p class="pin-label-top">Selected Location</p>
+                <p class="pin-coords">37.7749° N, 122.4194° W</p>
+              </div>
+              <span class="material-symbols-outlined map-pin-icon">location_on</span>
+              <div class="pin-shadow"></div>
+            </div>
+
+            <!-- Map Controls -->
+            <div class="map-controls">
+              <button class="map-ctrl-btn"><span class="material-symbols-outlined">add</span></button>
+              <button class="map-ctrl-btn"><span class="material-symbols-outlined">remove</span></button>
+              <button class="map-ctrl-btn green"><span class="material-symbols-outlined">my_location</span></button>
+            </div>
+          </div>
+
+          <div class="map-footer">
+            <span class="material-symbols-outlined muted">info</span>
+            <p>Your address will be automatically detected but can be adjusted manually if needed.</p>
+          </div>
+        </section>
+
+        <!-- Actions -->
+        <section class="card">
+          <button class="btn-submit">
+            <span class="material-symbols-outlined">send</span>
+            Submit Final Report
+          </button>
+          <div class="action-row">
+            <button class="btn-draft">
+              <span class="material-symbols-outlined tiny">save</span> Save Draft
+            </button>
+            <button class="btn-cancel">Cancel</button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Footer Bar -->
+    <div class="report-footer">
+      <div class="status-items">
+        <span class="status-item">
+          <span class="dot green-dot"></span> Reporting anonymously
+        </span>
+        <span class="status-item">
+          <span class="dot green-dot"></span> Auto-save: 2 min ago
+        </span>
+      </div>
+      <p class="muted-sm">© 2026 GreenSweep Environmental Services. All rights reserved.</p>
+    </div>
+
+  </main>
+
+</body>
+</html>

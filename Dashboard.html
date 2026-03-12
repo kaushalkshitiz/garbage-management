@@ -1,319 +1,274 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Municipal Admin Dashboard - GreenSweep</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="css/Dashboard.css" rel="stylesheet"/>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Municipal Admin Dashboard - GreenSweep</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Dashboard.css" />
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#111814] dark:text-white antialiased">
-<nav class="hidden md:flex items-center gap-10">
-<a href="Home.html">Home</a>
-<a href="Awarness.html">Awareness</a>
-<a href="report.html">Report</a>
-<a href="Dashboard.html">Dashboard</a>
-<a href="Admin.html">Admin</a>
-</nav>
-<div class="flex h-screen overflow-hidden">
-<!-- SideNavBar Component -->
-<aside class="w-64 flex-shrink-0 bg-white dark:bg-[#1a2e22] border-r border-[#dbe6df] dark:border-[#2a4535] hidden md:flex flex-col">
-<div class="flex flex-col h-full p-4 justify-between">
-<div class="flex flex-col gap-8">
-<!-- Logo Area -->
-<div class="flex gap-3 items-center px-2">
-<div class="bg-primary rounded-lg p-2 flex items-center justify-center">
-<span class="material-symbols-outlined text-[#111814]">eco</span>
-</div>
-<div class="flex flex-col">
-<h1 class="text-[#111814] dark:text-white text-base font-bold leading-tight">GreenSweep</h1>
-<p class="text-[#608a71] dark:text-primary/70 text-xs font-normal">Municipal Authority</p>
-</div>
-<!-- Dashboard (current page) -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-[#111814] font-medium" href="Dashboard.html">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="text-sm">Dashboard</span>
-</a>
-<!-- Reports -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="report.html">
-<span class="material-symbols-outlined">description</span>
-<span class="text-sm">Reports</span>
-</a>
-<!-- Analytics -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="Dashboard.html">
-<span class="material-symbols-outlined">bar_chart</span>
-<span class="text-sm">Analytics</span>
-</a>
-<!-- Map View -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="report.html">
-<span class="material-symbols-outlined">map</span>
-<span class="text-sm">Map View</span>
-</a>
-<!-- Settings -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-light font-medium" href="Admin.html">
-<span class="material-symbols-outlined">settings</span>
-<span class="text-sm">Settings</span>
-</a>
-</div>
-<!-- Action Button -->
-<button class="w-full flex items-center justify-center gap-2 rounded-lg py-3 bg-primary text-[#111814] text-sm font-bold tracking-wide hover:brightness-95 transition-all">
-<span class="material-symbols-outlined text-sm">add_circle</span>
-<span>New Report</span>
-</button>
-</div>
-</div></aside>
-<!-- Main Content Area -->
-<main class="flex-1 flex flex-col overflow-hidden">
-<!-- TopNavBar Component -->
-<header class="h-16 flex-shrink-0 bg-white dark:bg-[#1a2e22] border-b border-[#dbe6df] dark:border-[#2a4535] px-6 flex items-center justify-between">
-<div class="flex items-center gap-6 flex-1">
-<h2 class="text-[#111814] dark:text-white text-lg font-bold tracking-tight md:block hidden">Admin Dashboard</h2>
-<div class="max-w-md w-full relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#608a71] text-xl">search</span>
-<input class="w-full bg-background-light dark:bg-[#2a4535] border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 text-[#111814] dark:text-white placeholder-[#608a71]" placeholder="Search reports, users, or locations..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="flex items-center gap-2 pr-4 border-r border-[#dbe6df] dark:border-[#2a4535]">
-<button class="p-2 rounded-lg bg-background-light dark:bg-[#2a4535] text-[#111814] dark:text-[#dbe6df] relative">
-<span class="material-symbols-outlined text-xl">notifications</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-[#1a2e22]"></span>
-</button>
-<button class="p-2 rounded-lg bg-background-light dark:bg-[#2a4535] text-[#111814] dark:text-[#dbe6df]">
-<span class="material-symbols-outlined text-xl">chat_bubble</span>
-</button>
-</div>
-<div class="flex items-center gap-3 pl-2">
-<div class="text-right hidden sm:block">
-<p class="text-sm font-bold text-[#111814] dark:text-white leading-none">Sarah Jenkins</p>
-<p class="text-xs text-[#608a71] dark:text-primary/70">Chief Inspector</p>
-</div>
-<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Professional portrait of a municipal administrator" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcbjGy5BgaYMZVkcMr5P55JijQwr1xiHkZc5aJKBOCfD7nKR0VDAR9SBHji3nLVTpfhwZ1i0FynTQF0lOBEGQCHBavH31BvPtKLOcjqMofHfchoXHgc4ENzgIOg29xnJhtbVZJiKfa8_z107hkIvH4yIVSbqqtZw5vqVLug9eYfAXf8N0RdcRu2m7L-jPmHMAWGVPi3OIYsSO49knthCT_4KrtF7R99n-Ao81mEaE5BcLZFXtsrfJp_q2IUUbnD3_E_tL8yz6PIleP');">
-</div>
-</div>
-</div>
-</header>
-<!-- Page Content Scrollable Area -->
-<div class="flex-1 overflow-y-auto p-6 lg:p-10">
-<div class="max-w-6xl mx-auto space-y-8">
-<!-- PageHeading Component -->
-<div class="flex flex-col gap-2">
-<h1 class="text-[#111814] dark:text-white text-3xl font-black tracking-tight">Overview</h1>
-<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-base">Monitoring environmental reports and urban resolution progress.</p>
-</div>
-<!-- Stats Component -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-white dark:bg-[#1a2e22] p-6 rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-sm font-medium">Total Reports</p>
-<span class="material-symbols-outlined text-primary">assessment</span>
-</div>
-<p class="text-3xl font-bold text-[#111814] dark:text-white">1,248</p>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-sm text-[#078829]">trending_up</span>
-<span class="text-[#078829] text-sm font-bold">+12.5%</span>
-<span class="text-[#608a71] text-xs">from last month</span>
-</div>
-</div>
-<div class="bg-white dark:bg-[#1a2e22] p-6 rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-sm font-medium">Pending Action</p>
-<span class="material-symbols-outlined text-amber-500">pending_actions</span>
-</div>
-<p class="text-3xl font-bold text-[#111814] dark:text-white">84</p>
-<div class="flex items-center gap-2">
-<span class="px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-[10px] font-bold uppercase tracking-wider">High Priority</span>
-<span class="text-[#608a71] text-xs">Require attention</span>
-</div>
-</div>
-<div class="bg-white dark:bg-[#1a2e22] p-6 rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm flex flex-col gap-2">
-<div class="flex items-center justify-between">
-<p class="text-[#608a71] dark:text-[#dbe6df]/70 text-sm font-medium">Resolved Issues</p>
-<span class="material-symbols-outlined text-primary">verified</span>
-</div>
-<p class="text-3xl font-bold text-[#111814] dark:text-white">1,164</p>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
-<span class="text-primary text-sm font-bold">93.4%</span>
-<span class="text-[#608a71] text-xs">Success Rate</span>
-</div>
-</div>
-</div>
-<!-- Recent Reports Section -->
-<div class="bg-white dark:bg-[#1a2e22] rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm overflow-hidden">
-<!-- SectionHeader -->
-<div class="px-6 py-5 border-b border-[#dbe6df] dark:border-[#2a4535] flex items-center justify-between">
-<h2 class="text-lg font-bold text-[#111814] dark:text-white">Recent Incident Reports</h2>
-<button class="text-primary text-sm font-bold hover:underline">View All</button>
-</div>
-<!-- Table -->
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-background-light dark:bg-[#102217] text-[#608a71] text-xs font-bold uppercase tracking-wider">
-<th class="px-6 py-3">Report ID</th>
-<th class="px-6 py-3">Issue Type</th>
-<th class="px-6 py-3">Citizen</th>
-<th class="px-6 py-3">Location</th>
-<th class="px-6 py-3">Priority</th>
-<th class="px-6 py-3">Status</th>
-<th class="px-6 py-3 text-right">Actions</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-[#dbe6df] dark:divide-[#2a4535]">
-<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
-<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8429</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm text-[#608a71]">delete_outline</span>
-<span class="text-sm dark:text-[#dbe6df]">Illegal Dumping</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Marcus Thorne</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Greenwich Park</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">High</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-amber-500"></div>
-<span class="text-sm dark:text-[#dbe6df]">In Review</span>
-</div>
-</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
-<span class="material-symbols-outlined text-xl">more_vert</span>
-</button>
-</td>
-</tr>
-<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
-<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8428</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm text-[#608a71]">water_drop</span>
-<span class="text-sm dark:text-[#dbe6df]">Water Leakage</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Elena Rodriguez</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">2nd &amp; Main St.</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">Medium</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<span class="text-sm dark:text-[#dbe6df]">Resolved</span>
-</div>
-</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
-<span class="material-symbols-outlined text-xl">more_vert</span>
-</button>
-</td>
-</tr>
-<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
-<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8427</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm text-[#608a71]">edit_road</span>
-<span class="text-sm dark:text-[#dbe6df]">Vandalism</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">John Doe</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">East Tunnel</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-background-light dark:bg-[#2a4535] text-[#608a71] dark:text-[#dbe6df]">Low</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-[#608a71]"></div>
-<span class="text-sm dark:text-[#dbe6df]">Pending</span>
-</div>
-</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
-<span class="material-symbols-outlined text-xl">more_vert</span>
-</button>
-</td>
-</tr>
-<tr class="hover:bg-background-light/50 dark:hover:bg-[#2a4535]/20 transition-colors">
-<td class="px-6 py-4 text-sm font-medium text-[#111814] dark:text-white">#CC-8426</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm text-[#608a71]">light_mode</span>
-<span class="text-sm dark:text-[#dbe6df]">Street Light Out</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Sarah Williams</td>
-<td class="px-6 py-4 text-sm dark:text-[#dbe6df]">Maple Avenue</td>
-<td class="px-6 py-4">
-<span class="px-2 py-1 rounded text-[10px] font-bold uppercase bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">High</span>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-blue-500"></div>
-<span class="text-sm dark:text-[#dbe6df]">Dispatched</span>
-</div>
-</td>
-<td class="px-6 py-4 text-right">
-<button class="p-1 hover:bg-background-light dark:hover:bg-[#2a4535] rounded">
-<span class="material-symbols-outlined text-xl">more_vert</span>
-</button>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- Table Footer / Pagination -->
-<div class="px-6 py-4 bg-background-light/30 dark:bg-[#102217]/30 border-t border-[#dbe6df] dark:border-[#2a4535] flex items-center justify-between">
-<p class="text-xs text-[#608a71] dark:text-[#dbe6df]/70 font-medium">Showing 1 to 4 of 1,248 reports</p>
-<div class="flex gap-2">
-<button class="px-3 py-1 rounded border border-[#dbe6df] dark:border-[#2a4535] text-xs font-bold hover:bg-background-light dark:hover:bg-[#2a4535] transition-colors">Previous</button>
-<button class="px-3 py-1 rounded border border-[#dbe6df] dark:border-[#2a4535] text-xs font-bold hover:bg-background-light dark:hover:bg-[#2a4535] transition-colors">Next</button>
-</div>
-</div>
-</div>
-<!-- Map/Visual Section (Context Placeholder) -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-10">
-<div class="bg-white dark:bg-[#1a2e22] rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm overflow-hidden h-64 flex flex-col">
-<div class="px-4 py-3 border-b border-[#dbe6df] dark:border-[#2a4535] flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">pin_drop</span>
-<h3 class="text-sm font-bold dark:text-white">Active Hotspots</h3>
-</div>
-<div class="flex-1 bg-cover bg-center relative" data-alt="Map of a city showing colored clusters of incident reports" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1');">
-<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-</div>
-</div>
-<div class="bg-white dark:bg-[#1a2e22] rounded-xl border border-[#dbe6df] dark:border-[#2a4535] shadow-sm p-6 flex flex-col justify-between">
-<div>
-<h3 class="text-sm font-bold dark:text-white mb-1">Resolution Trend</h3>
-<p class="text-xs text-[#608a71] dark:text-[#dbe6df]/70 mb-4">Daily completion rate for the past 7 days</p>
-</div>
-<div class="h-32 w-full flex items-end gap-2 px-2">
-<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/2 rounded-t-sm" title="Monday: 42"></div>
-<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-3/4 rounded-t-sm" title="Tuesday: 68"></div>
-<div class="flex-1 bg-primary hover:bg-primary transition-colors h-full rounded-t-sm" title="Wednesday: 94"></div>
-<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-2/3 rounded-t-sm" title="Thursday: 55"></div>
-<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/2 rounded-t-sm" title="Friday: 45"></div>
-<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/3 rounded-t-sm" title="Saturday: 30"></div>
-<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-1/4 rounded-t-sm" title="Sunday: 20"></div>
-</div>
-<div class="flex justify-between mt-2 px-2 text-[10px] font-bold text-[#608a71] uppercase">
-<span>Mon</span>
-<span>Tue</span>
-<span>Wed</span>
-<span>Thu</span>
-<span>Fri</span>
-<span>Sat</span>
-<span>Sun</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</body></html>
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="logo">
+          <div class="logo-icon">
+            <span class="material-symbols-outlined">eco</span>
+          </div>
+          <div>
+            <strong>GreenSweep</strong>
+            <small>Municipal Authority</small>
+          </div>
+        </div>
+
+        <nav class="sidenav">
+          <a href="Dashboard.html" class="sidenav-link active">
+            <span class="material-symbols-outlined">dashboard</span> Dashboard
+          </a>
+          <a href="report.html" class="sidenav-link">
+            <span class="material-symbols-outlined">description</span> Reports
+          </a>
+          <a href="Dashboard.html" class="sidenav-link">
+            <span class="material-symbols-outlined">bar_chart</span> Analytics
+          </a>
+          <a href="report.html" class="sidenav-link">
+            <span class="material-symbols-outlined">map</span> Map View
+          </a>
+          <a href="Admin.html" class="sidenav-link">
+            <span class="material-symbols-outlined">settings</span> Settings
+          </a>
+        </nav>
+      </div>
+
+      <button class="btn-new-report">
+        <span class="material-symbols-outlined">add_circle</span> New Report
+      </button>
+    </aside>
+
+    <!-- Main -->
+    <div class="main-area">
+
+      <!-- Top Header -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h2>Admin Dashboard</h2>
+          <div class="search-box">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" placeholder="Search reports, users, or locations..." />
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="icon-btn">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="badge"></span>
+          </button>
+          <button class="icon-btn">
+            <span class="material-symbols-outlined">chat_bubble</span>
+          </button>
+          <div class="user-info">
+            <div>
+              <strong>Sarah Jenkins</strong>
+              <small>Chief Inspector</small>
+            </div>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcbjGy5BgaYMZVkcMr5P55JijQwr1xiHkZc5aJKBOCfD7nKR0VDAR9SBHji3nLVTpfhwZ1i0FynTQF0lOBEGQCHBavH31BvPtKLOcjqMofHfchoXHgc4ENzgIOg29xnJhtbVZJiKfa8_z107hkIvH4yIVSbqqtZw5vqVLug9eYfAXf8N0RdcRu2m7L-jPmHMAWGVPi3OIYsSO49knthCT_4KrtF7R99n-Ao81mEaE5BcLZFXtsrfJp_q2IUUbnD3_E_tL8yz6PIleP"
+              alt="Sarah Jenkins"
+              class="avatar"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="content">
+
+        <div class="page-heading">
+          <h1>Overview</h1>
+          <p>Monitoring environmental reports and urban resolution progress.</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <span class="stat-label">Total Reports</span>
+              <span class="material-symbols-outlined stat-icon green">assessment</span>
+            </div>
+            <p class="stat-value">1,248</p>
+            <div class="stat-footer">
+              <span class="material-symbols-outlined small green">trending_up</span>
+              <span class="green bold">+12.5%</span>
+              <span class="muted">from last month</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <span class="stat-label">Pending Action</span>
+              <span class="material-symbols-outlined stat-icon amber">pending_actions</span>
+            </div>
+            <p class="stat-value">84</p>
+            <div class="stat-footer">
+              <span class="badge-pill red">High Priority</span>
+              <span class="muted">Require attention</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <span class="stat-label">Resolved Issues</span>
+              <span class="material-symbols-outlined stat-icon green">verified</span>
+            </div>
+            <p class="stat-value">1,164</p>
+            <div class="stat-footer">
+              <span class="material-symbols-outlined small green">check_circle</span>
+              <span class="green bold">93.4%</span>
+              <span class="muted">Success Rate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reports Table -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Recent Incident Reports</h2>
+            <button class="link-btn">View All</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Report ID</th>
+                  <th>Issue Type</th>
+                  <th>Citizen</th>
+                  <th>Location</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th class="text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#CC-8429</strong></td>
+                  <td>
+                    <span class="material-symbols-outlined small muted">delete_outline</span>
+                    Illegal Dumping
+                  </td>
+                  <td>Marcus Thorne</td>
+                  <td>Greenwich Park</td>
+                  <td><span class="badge-pill red">High</span></td>
+                  <td>
+                    <span class="dot amber"></span> In Review
+                  </td>
+                  <td class="text-right">
+                    <button class="icon-btn small"><span class="material-symbols-outlined">more_vert</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#CC-8428</strong></td>
+                  <td>
+                    <span class="material-symbols-outlined small muted">water_drop</span>
+                    Water Leakage
+                  </td>
+                  <td>Elena Rodriguez</td>
+                  <td>2nd &amp; Main St.</td>
+                  <td><span class="badge-pill amber">Medium</span></td>
+                  <td>
+                    <span class="dot green"></span> Resolved
+                  </td>
+                  <td class="text-right">
+                    <button class="icon-btn small"><span class="material-symbols-outlined">more_vert</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#CC-8427</strong></td>
+                  <td>
+                    <span class="material-symbols-outlined small muted">edit_road</span>
+                    Vandalism
+                  </td>
+                  <td>John Doe</td>
+                  <td>East Tunnel</td>
+                  <td><span class="badge-pill grey">Low</span></td>
+                  <td>
+                    <span class="dot grey"></span> Pending
+                  </td>
+                  <td class="text-right">
+                    <button class="icon-btn small"><span class="material-symbols-outlined">more_vert</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#CC-8426</strong></td>
+                  <td>
+                    <span class="material-symbols-outlined small muted">light_mode</span>
+                    Street Light Out
+                  </td>
+                  <td>Sarah Williams</td>
+                  <td>Maple Avenue</td>
+                  <td><span class="badge-pill red">High</span></td>
+                  <td>
+                    <span class="dot blue"></span> Dispatched
+                  </td>
+                  <td class="text-right">
+                    <button class="icon-btn small"><span class="material-symbols-outlined">more_vert</span></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card-footer">
+            <span class="muted">Showing 1 to 4 of 1,248 reports</span>
+            <div class="pagination">
+              <button>Previous</button>
+              <button>Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Grid -->
+        <div class="bottom-grid">
+
+          <!-- Map -->
+          <div class="card map-card">
+            <div class="card-header small">
+              <span class="material-symbols-outlined green">pin_drop</span>
+              <h3>Active Hotspots</h3>
+            </div>
+            <div
+              class="map-image"
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1');"
+            ></div>
+          </div>
+
+          <!-- Bar Chart -->
+          <div class="card chart-card">
+            <h3>Resolution Trend</h3>
+            <p class="muted small-text">Daily completion rate for the past 7 days</p>
+
+            <div class="bar-chart">
+              <div class="bar" style="height: 50%" title="Monday: 42"></div>
+              <div class="bar active" style="height: 72%" title="Tuesday: 68"></div>
+              <div class="bar active" style="height: 100%" title="Wednesday: 94"></div>
+              <div class="bar" style="height: 58%" title="Thursday: 55"></div>
+              <div class="bar" style="height: 48%" title="Friday: 45"></div>
+              <div class="bar" style="height: 32%" title="Saturday: 30"></div>
+              <div class="bar" style="height: 21%" title="Sunday: 20"></div>
+            </div>
+            <div class="bar-labels">
+              <span>Mon</span><span>Tue</span><span>Wed</span>
+              <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- end .content -->
+    </div><!-- end .main-area -->
+  </div><!-- end .layout -->
+
+</body>
+</html>

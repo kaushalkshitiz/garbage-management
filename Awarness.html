@@ -1,298 +1,276 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Environmental Awareness Hub | GreenSweep</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="css/Awarness.css" rel="stylesheet"/>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Environmental Awareness Hub | GreenSweep</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Awarness.css" />
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#111814] dark:text-white transition-colors duration-300">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<!-- Navigation -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dbe6df] dark:border-[#2a3c31] px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-4 text-[#111814] dark:text-white">
-<div class="size-8 text-primary">
-<span class="material-symbols-outlined text-4xl">eco</span>
-</div>
-<h2 class="text-[#111814] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">GreenSweep</h2>
-</div>
-<nav class="hidden md:flex items-center gap-10">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Home.html">Home</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Awarness.html">Awareness</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="report.html">Report</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Dashboard.html">Dashboard</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="Admin.html">Admin</a>
-</nav>
-</div>
-<div class="flex flex-1 justify-end gap-8">
-<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden sm:block">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
-<div class="text-[#608a71] flex border-none bg-[#e8efeb] dark:bg-[#1a2e22] items-center justify-center pl-4 rounded-l-lg" data-icon="search">
-<span class="material-symbols-outlined">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111814] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e8efeb] dark:bg-[#1a2e22] h-full placeholder:text-[#608a71] px-4 rounded-l-none pl-2 text-base font-normal" placeholder="Search topics..." value=""/>
-</div>
-</label>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111814] text-sm font-bold leading-normal">
-<span>Sign In</span>
-</button>
-</div>
-</header>
-<main class="flex flex-col items-center">
-<div class="layout-content-container flex flex-col max-w-[1200px] w-full px-4 md:px-10 py-5">
-<!-- Hero Section -->
-<section class="@container mb-10">
-<div class="flex flex-col gap-6 py-10 @[864px]:flex-row @[864px]:items-center">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl shadow-xl @[480px]:h-[400px] @[864px]:w-1/2" data-alt="People planting trees in a sunny urban park" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLbNgkvAKesAZQP8XFGunp9gS7hv7dihjadCsLnDC67xxYNz6CNmCsdyH5Gv0yPo9Iz6QCAKuBuc7ql7uLcUiVSWvJXgtiCKDGhkqfFBQ5entg6PNXSBVWroitVXiNkLMny3_wnsA84YGVcIhg0y3bicNxnvhWSrQotXMXvUjYr6TinXYntizYLvH34jtAD9O6aXGOYvk4LhjEZiZPr360bflqpTdDA5FZBEJ_4xplS07rTb32Z6847H4v9EcqnfckbwFVNijON3VY");'>
-<div class="w-full h-full bg-black/20 rounded-xl flex items-end p-6">
-<span class="bg-primary/90 text-[#111814] px-4 py-2 rounded-full text-sm font-bold">Community Project #24</span>
-</div>
-</div>
-<div class="flex flex-col gap-6 @[864px]:w-1/2 @[864px]:pl-10">
-<div class="flex flex-col gap-3">
-<h1 class="text-[#111814] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
-                                        Every Action Counts for a <span class="text-primary">Cleaner City</span>
-</h1>
-<p class="text-[#4a6353] dark:text-gray-300 text-base font-normal leading-relaxed">
-                                        Explore real-time environmental data and learn how your daily habits impact our local ecosystem. Join 15,000+ citizens making a difference every day.
-                                    </p>
-</div>
-<div class="flex gap-4">
-<button class="flex-1 sm:flex-none min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-[#111814] text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
-                                        Take Action
-                                    </button>
-<button class="flex-1 sm:flex-none min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-[#e8efeb] dark:bg-[#1a2e22] text-[#111814] dark:text-white text-base font-bold hover:bg-[#dbe6df] transition-all">
-                                        Learn More
-                                    </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Section Header -->
-<div class="flex items-center justify-between mb-2">
-<h2 class="text-[#111814] dark:text-white text-[24px] font-bold leading-tight tracking-[-0.015em] border-l-4 border-primary pl-4">Environmental Vital Signs</h2>
-<span class="text-sm text-[#608a71] flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">schedule</span> Updated 5m ago
-                        </span>
-</div>
-<!-- Stats Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 mb-10">
-<div class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3c31] card-hover shadow-sm">
-<div class="flex items-center justify-between">
-<p class="text-[#4a6353] dark:text-gray-300 text-sm font-medium uppercase tracking-wider">Air Quality Index</p>
-<span class="material-symbols-outlined text-primary">air</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="text-[#111814] dark:text-white text-4xl font-black leading-tight">42</p>
-<p class="text-[#078829] font-bold text-lg">Good</p>
-</div>
-<div class="flex items-center gap-2">
-<span class="flex items-center text-[#078829] bg-[#078829]/10 px-2 py-1 rounded text-xs font-bold">
-<span class="material-symbols-outlined text-xs">arrow_downward</span> 12%
-                                </span>
-<p class="text-[#608a71] text-xs font-medium">vs last month</p>
-</div>
-<div class="w-full bg-[#f0f5f2] dark:bg-[#102217] h-2 rounded-full overflow-hidden mt-2">
-<div class="bg-primary h-full rounded-full" style="width: 42%"></div>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3c31] card-hover shadow-sm">
-<div class="flex items-center justify-between">
-<p class="text-[#4a6353] dark:text-gray-300 text-sm font-medium uppercase tracking-wider">Waste Diverted</p>
-<span class="material-symbols-outlined text-primary">recycling</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="text-[#111814] dark:text-white text-4xl font-black leading-tight">68%</p>
-<p class="text-[#608a71] font-bold text-lg">Goal: 75%</p>
-</div>
-<div class="flex items-center gap-2">
-<span class="flex items-center text-[#078829] bg-[#078829]/10 px-2 py-1 rounded text-xs font-bold">
-<span class="material-symbols-outlined text-xs">arrow_upward</span> 5%
-                                </span>
-<p class="text-[#608a71] text-xs font-medium">increase in recycling</p>
-</div>
-<div class="w-full bg-[#f0f5f2] dark:bg-[#102217] h-2 rounded-full overflow-hidden mt-2">
-<div class="bg-primary h-full rounded-full" style="width: 68%"></div>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3c31] card-hover shadow-sm">
-<div class="flex items-center justify-between">
-<p class="text-[#4a6353] dark:text-gray-300 text-sm font-medium uppercase tracking-wider">CO2 Reduced</p>
-<span class="material-symbols-outlined text-primary">cloud_done</span>
-</div>
-<div class="flex items-baseline gap-2">
-<p class="text-[#111814] dark:text-white text-4xl font-black leading-tight">1,240</p>
-<p class="text-[#608a71] font-bold text-lg">Tons</p>
-</div>
-<div class="flex items-center gap-2">
-<span class="flex items-center text-[#078829] bg-[#078829]/10 px-2 py-1 rounded text-xs font-bold">
-<span class="material-symbols-outlined text-xs">arrow_upward</span> 8%
-                                </span>
-<p class="text-[#608a71] text-xs font-medium">this quarter</p>
-</div>
-<div class="w-full bg-[#f0f5f2] dark:bg-[#102217] h-2 rounded-full overflow-hidden mt-2">
-<div class="bg-primary h-full rounded-full" style="width: 82%"></div>
-</div>
-</div>
-</div>
-<!-- Educational Topics Header -->
-<div class="flex items-center justify-between mb-6">
-<h2 class="text-[#111814] dark:text-white text-[24px] font-bold leading-tight tracking-[-0.015em] border-l-4 border-primary pl-4">Educational Topics</h2>
-<button class="text-primary font-bold text-sm hover:underline">View All Topics</button>
-</div>
-<!-- Topic Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-<!-- Air Quality -->
-<div class="group flex flex-col gap-4 rounded-xl overflow-hidden bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3c31] card-hover cursor-pointer">
-<div class="h-32 bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-5xl text-primary">airwave</span>
-</div>
-<div class="p-5 flex flex-col gap-2">
-<h3 class="font-bold text-lg">Air Quality Basics</h3>
-<p class="text-sm text-[#4a6353] dark:text-gray-400">Understand the AQI and how it affects your daily health outdoors.</p>
-<div class="mt-2 flex items-center text-primary font-bold text-xs uppercase tracking-widest">
-                                    Read Guide <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
-</div>
-</div>
-</div>
-<!-- Waste Management -->
-<div class="group flex flex-col gap-4 rounded-xl overflow-hidden bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3c31] card-hover cursor-pointer">
-<div class="h-32 bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-5xl text-primary">delete_sweep</span>
-</div>
-<div class="p-5 flex flex-col gap-2">
-<h3 class="font-bold text-lg">Zero Waste Living</h3>
-<p class="text-sm text-[#4a6353] dark:text-gray-400">Actionable steps to reduce your household waste by up to 50%.</p>
-<div class="mt-2 flex items-center text-primary font-bold text-xs uppercase tracking-widest">
-                                    Read Guide <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
-</div>
-</div>
-</div>
-<!-- Energy Efficiency -->
-<div class="group flex flex-col gap-4 rounded-xl overflow-hidden bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3c31] card-hover cursor-pointer">
-<div class="h-32 bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-5xl text-primary">bolt</span>
-</div>
-<div class="p-5 flex flex-col gap-2">
-<h3 class="font-bold text-lg">Smart Energy</h3>
-<p class="text-sm text-[#4a6353] dark:text-gray-400">Save on bills and reduce footprint with smart home automation.</p>
-<div class="mt-2 flex items-center text-primary font-bold text-xs uppercase tracking-widest">
-                                    Read Guide <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
-</div>
-</div>
-</div>
-<!-- Urban Gardening -->
-<div class="group flex flex-col gap-4 rounded-xl overflow-hidden bg-white dark:bg-[#1a2e22] border border-[#dbe6df] dark:border-[#2a3c31] card-hover cursor-pointer">
-<div class="h-32 bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-5xl text-primary">potted_plant</span>
-</div>
-<div class="p-5 flex flex-col gap-2">
-<h3 class="font-bold text-lg">Urban Farming</h3>
-<p class="text-sm text-[#4a6353] dark:text-gray-400">Transform your balcony or windowsill into a green sanctuary.</p>
-<div class="mt-2 flex items-center text-primary font-bold text-xs uppercase tracking-widest">
-                                    Read Guide <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Did You Know? / Interactive Section -->
-<section class="bg-primary/10 dark:bg-primary/5 rounded-2xl p-8 md:p-12 mb-16 flex flex-col md:flex-row gap-10 items-center">
-<div class="flex-1">
-<h2 class="text-3xl font-black mb-4">Did you know?</h2>
-<p class="text-lg text-[#4a6353] dark:text-gray-300 mb-6 italic">
-                                "Recycling just one aluminum can saves enough energy to run a TV for three hours."
-                            </p>
-<div class="flex flex-wrap gap-3">
-<span class="bg-white dark:bg-[#1a2e22] px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">#EcoTips</span>
-<span class="bg-white dark:bg-[#1a2e22] px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">#SaveEnergy</span>
-<span class="bg-white dark:bg-[#1a2e22] px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">#Recycle</span>
-</div>
-</div>
-<div class="w-full md:w-1/3 bg-white dark:bg-[#1a2e22] p-6 rounded-xl shadow-lg border-b-4 border-primary">
-<h4 class="font-bold mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">quiz</span> Weekly Quiz
-                            </h4>
-<p class="text-sm mb-4">How many trees are needed to offset the average citizen's CO2?</p>
-<div class="flex flex-col gap-2">
-<button class="w-full text-left p-3 rounded-lg border border-[#dbe6df] dark:border-[#2a3c31] hover:bg-primary/20 transition-all text-sm font-medium">A) 15 Trees</button>
-<button class="w-full text-left p-3 rounded-lg border border-[#dbe6df] dark:border-[#2a3c31] hover:bg-primary/20 transition-all text-sm font-medium">B) 31 Trees</button>
-<button class="w-full text-left p-3 rounded-lg border border-primary bg-primary/10 text-sm font-medium">C) 52 Trees</button>
-</div>
-</div>
-</section>
-<!-- Knowledge Accordions (FAQ style) -->
-<div class="mb-20">
-<h2 class="text-[#111814] dark:text-white text-[24px] font-bold leading-tight mb-6">Common Questions</h2>
-<div class="flex flex-col gap-3">
-<div class="rounded-lg border border-[#dbe6df] dark:border-[#2a3c31] bg-white dark:bg-[#1a2e22] p-5">
-<button class="flex w-full items-center justify-between font-bold text-left">
-<span>How can I report illegal waste dumping in my neighborhood?</span>
-<span class="material-symbols-outlined">expand_more</span>
-</button>
-<div class="mt-4 text-[#4a6353] dark:text-gray-400 text-sm leading-relaxed border-t border-[#f0f5f2] pt-4">
-                                    You can use our 'Report' tab in the navigation bar. Simply snap a photo, pin the location, and our municipal team will be notified immediately for cleanup.
-                                </div>
-</div>
-<div class="rounded-lg border border-[#dbe6df] dark:border-[#2a3c31] bg-white dark:bg-[#1a2e22] p-5">
-<button class="flex w-full items-center justify-between font-bold text-left">
-<span>What are the new recycling categories starting next month?</span>
-<span class="material-symbols-outlined">expand_more</span>
-</button>
-</div>
-<div class="rounded-lg border border-[#dbe6df] dark:border-[#2a3c31] bg-white dark:bg-[#1a2e22] p-5">
-<button class="flex w-full items-center justify-between font-bold text-left">
-<span>How is the city measuring the CO2 reduction?</span>
-<span class="material-symbols-outlined">expand_more</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="bg-white dark:bg-[#102217] border-t border-[#dbe6df] dark:border-[#2a3c31] py-12">
-<div class="max-w-[1200px] mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between gap-10">
-<div class="flex flex-col gap-4 max-w-sm">
-<div class="flex items-center gap-2 text-primary font-bold text-xl">
-<span class="material-symbols-outlined text-3xl">eco</span> GreenSweep
-                        </div>
-<p class="text-[#608a71] text-sm">Empowering citizens to take charge of their local environment through data and community action. Together for a greener tomorrow.</p>
-<div class="flex gap-4 mt-2">
-<a class="text-[#608a71] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-[#608a71] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
-<a class="text-[#608a71] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-</div>
-</div>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-10">
-<div class="flex flex-col gap-3">
-<h5 class="font-bold text-sm">Platform</h5>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Dashboard</a>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Reporting</a>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Community</a>
-</div>
-<div class="flex flex-col gap-3">
-<h5 class="font-bold text-sm">Learn</h5>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Articles</a>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Statistics</a>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Policy</a>
-</div>
-<div class="flex flex-col gap-3">
-<h5 class="font-bold text-sm">Legal</h5>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Privacy</a>
-<a class="text-[#608a71] text-sm hover:text-primary" href="#">Terms</a>
-</div>
-</div>
-</div>
-<div class="max-w-[1200px] mx-auto px-4 md:px-10 mt-12 pt-8 border-t border-[#f0f5f2] dark:border-[#1a2e22] text-center text-[#608a71] text-xs">
-                    © 2026  Greensweep Environmental Hub. All rights reserved.
-                </div>
-</footer>
-</div>
-</div>
-</body></html>
+<body>
+
+  <!-- Header / Nav -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">
+        <span class="material-symbols-outlined logo-icon">eco</span>
+        <strong>GreenSweep</strong>
+      </div>
+      <nav>
+        <a href="Home.html">Home</a>
+        <a href="Awarness.html" class="active">Awareness</a>
+        <a href="report.html">Report</a>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="Admin.html">Admin</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      <div class="search-box">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search topics..." />
+      </div>
+      <button class="btn-primary">Sign In</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div
+        class="hero-image"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLbNgkvAKesAZQP8XFGunp9gS7hv7dihjadCsLnDC67xxYNz6CNmCsdyH5Gv0yPo9Iz6QCAKuBuc7ql7uLcUiVSWvJXgtiCKDGhkqfFBQ5entg6PNXSBVWroitVXiNkLMny3_wnsA84YGVcIhg0y3bicNxnvhWSrQotXMXvUjYr6TinXYntizYLvH34jtAD9O6aXGOYvk4LhjEZiZPr360bflqpTdDA5FZBEJ_4xplS07rTb32Z6847H4v9EcqnfckbwFVNijON3VY');"
+      >
+        <span class="hero-tag">Community Project #24</span>
+      </div>
+      <div class="hero-text">
+        <h1>Every Action Counts for a <span class="text-green">Cleaner City</span></h1>
+        <p>
+          Explore real-time environmental data and learn how your daily habits impact our local ecosystem.
+          Join 15,000+ citizens making a difference every day.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-primary">Take Action</button>
+          <button class="btn-secondary">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vital Signs -->
+    <div class="section-header">
+      <h2 class="section-title">Environmental Vital Signs</h2>
+      <span class="muted small">
+        <span class="material-symbols-outlined tiny">schedule</span> Updated 5m ago
+      </span>
+    </div>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label">Air Quality Index</span>
+          <span class="material-symbols-outlined green">air</span>
+        </div>
+        <div class="stat-value-row">
+          <span class="big-num">42</span>
+          <span class="green bold">Good</span>
+        </div>
+        <div class="stat-change green">
+          <span class="material-symbols-outlined tiny">arrow_downward</span> 12% vs last month
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 42%"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label">Waste Diverted</span>
+          <span class="material-symbols-outlined green">recycling</span>
+        </div>
+        <div class="stat-value-row">
+          <span class="big-num">68%</span>
+          <span class="muted bold">Goal: 75%</span>
+        </div>
+        <div class="stat-change green">
+          <span class="material-symbols-outlined tiny">arrow_upward</span> 5% increase in recycling
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 68%"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label">CO2 Reduced</span>
+          <span class="material-symbols-outlined green">cloud_done</span>
+        </div>
+        <div class="stat-value-row">
+          <span class="big-num">1,240</span>
+          <span class="muted bold">Tons</span>
+        </div>
+        <div class="stat-change green">
+          <span class="material-symbols-outlined tiny">arrow_upward</span> 8% this quarter
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 82%"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Educational Topics -->
+    <div class="section-header">
+      <h2 class="section-title">Educational Topics</h2>
+      <button class="link-btn">View All Topics</button>
+    </div>
+
+    <div class="topic-grid">
+
+      <div class="topic-card">
+        <div class="topic-icon-area">
+          <span class="material-symbols-outlined big-icon">airwave</span>
+        </div>
+        <div class="topic-body">
+          <h3>Air Quality Basics</h3>
+          <p>Understand the AQI and how it affects your daily health outdoors.</p>
+          <span class="read-guide">Read Guide <span class="material-symbols-outlined tiny">chevron_right</span></span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon-area">
+          <span class="material-symbols-outlined big-icon">delete_sweep</span>
+        </div>
+        <div class="topic-body">
+          <h3>Zero Waste Living</h3>
+          <p>Actionable steps to reduce your household waste by up to 50%.</p>
+          <span class="read-guide">Read Guide <span class="material-symbols-outlined tiny">chevron_right</span></span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon-area">
+          <span class="material-symbols-outlined big-icon">bolt</span>
+        </div>
+        <div class="topic-body">
+          <h3>Smart Energy</h3>
+          <p>Save on bills and reduce footprint with smart home automation.</p>
+          <span class="read-guide">Read Guide <span class="material-symbols-outlined tiny">chevron_right</span></span>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon-area">
+          <span class="material-symbols-outlined big-icon">potted_plant</span>
+        </div>
+        <div class="topic-body">
+          <h3>Urban Farming</h3>
+          <p>Transform your balcony or windowsill into a green sanctuary.</p>
+          <span class="read-guide">Read Guide <span class="material-symbols-outlined tiny">chevron_right</span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Did You Know -->
+    <section class="did-you-know">
+      <div class="dyk-left">
+        <h2>Did you know?</h2>
+        <p class="quote">
+          "Recycling just one aluminum can saves enough energy to run a TV for three hours."
+        </p>
+        <div class="tags">
+          <span class="tag">#EcoTips</span>
+          <span class="tag">#SaveEnergy</span>
+          <span class="tag">#Recycle</span>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <h4>
+          <span class="material-symbols-outlined green">quiz</span> Weekly Quiz
+        </h4>
+        <p>How many trees are needed to offset the average citizen's CO2?</p>
+        <div class="quiz-options">
+          <button class="quiz-btn">A) 15 Trees</button>
+          <button class="quiz-btn">B) 31 Trees</button>
+          <button class="quiz-btn correct">C) 52 Trees</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / Accordion -->
+    <div class="faq-section">
+      <h2>Common Questions</h2>
+
+      <div class="faq-item open">
+        <button class="faq-toggle">
+          How can I report illegal waste dumping in my neighborhood?
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+        <div class="faq-answer">
+          You can use our 'Report' tab in the navigation bar. Simply snap a photo, pin the location,
+          and our municipal team will be notified immediately for cleanup.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">
+          What are the new recycling categories starting next month?
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">
+          How is the city measuring the CO2 reduction?
+          <span class="material-symbols-outlined">expand_more</span>
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="material-symbols-outlined logo-icon">eco</span>
+          <strong>GreenSweep</strong>
+        </div>
+        <p>Empowering citizens to take charge of their local environment through data and community action.</p>
+        <div class="footer-icons">
+          <a href="#"><span class="material-symbols-outlined">public</span></a>
+          <a href="#"><span class="material-symbols-outlined">mail</span></a>
+          <a href="#"><span class="material-symbols-outlined">share</span></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <a href="#">Dashboard</a>
+          <a href="#">Reporting</a>
+          <a href="#">Community</a>
+        </div>
+        <div class="footer-col">
+          <h5>Learn</h5>
+          <a href="#">Articles</a>
+          <a href="#">Statistics</a>
+          <a href="#">Policy</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 GreenSweep Environmental Hub. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
