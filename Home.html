@@ -63,7 +63,43 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section" id="impact">
+    <style>
+  .stat-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: default;
+  }
+  .stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(13, 242, 105, 0.18);
+    border-color: #0df269;
+  }
+  .stat-card:hover .stat-num {
+    color: #078829;
+    transition: color 0.25s ease;
+  }
+  .stat-card:hover .material-symbols-outlined.green {
+    transform: scale(1.2) rotate(-8deg);
+    transition: transform 0.25s ease;
+    display: inline-block;
+  }
+  .stat-card .material-symbols-outlined.green {
+    transition: transform 0.25s ease;
+    display: inline-block;
+  }
+  .stat-card:hover .trend-badge {
+    background: #0df269;
+    color: #111814;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .trend-badge {
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .stat-num {
+    transition: color 0.25s ease;
+  }
+</style>
+
+<section class="stats-section" id="impact">
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-top">
@@ -176,7 +212,6 @@
         </div>
         <p>Building smarter, cleaner, and more sustainable cities through citizen engagement and modern technology.</p>
       </div>
-
       <div class="footer-col">
         <h4>Platform</h4>
         <a href="#">How it Works</a>
@@ -184,7 +219,6 @@
         <a href="#">Impact Report</a>
         <a href="#">Pricing</a>
       </div>
-
       <div class="footer-col">
         <h4>Company</h4>
         <a href="#">About Us</a>
@@ -192,7 +226,6 @@
         <a href="#">Press Kit</a>
         <a href="#">Contact</a>
       </div>
-
       <div class="footer-col">
         <h4>Subscribe</h4>
         <p class="sub-text">Get updates on local environmental projects.</p>
@@ -204,7 +237,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <span>© 2026 GreenSweep Inc. All rights reserved.</span>
       <div class="footer-links">
@@ -214,6 +246,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>

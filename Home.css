@@ -252,9 +252,14 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   gap: 14px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
 }
-.step-card:hover { border-color: #0df269; transform: translateY(-3px); }
+.step-card:hover {
+  border-color: #0df269;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(13, 242, 105, 0.18);
+}
 .step-icon {
   width: 64px;
   height: 64px;
@@ -263,12 +268,26 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background 0.25s ease;
 }
 .step-card:hover .step-icon { background: #0df269; }
-.step-icon .material-symbols-outlined { font-size: 28px; color: #0df269; }
-.step-card:hover .step-icon .material-symbols-outlined { color: #111814; }
-.step-card h3 { margin: 0; font-size: 17px; font-weight: 700; }
+.step-icon .material-symbols-outlined {
+  font-size: 28px;
+  color: #0df269;
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+.step-card:hover .step-icon .material-symbols-outlined {
+  color: #111814;
+  transform: scale(1.2) rotate(-8deg);
+}
+.step-card h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+.step-card:hover h3 { color: #078829; }
 .step-card p  { margin: 0; color: #608a71; font-size: 13px; line-height: 1.6; }
 
 /* ── Authorities ── */
