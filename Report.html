@@ -9,17 +9,65 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="topbar">
-    <div class="topbar-inner">
+  <!-- ──  side panel toggle ── -->
+  <input type="checkbox" id="panel-toggle" class="panel-toggle-input" />
+
+  <!-- ── Side Panel Overlay (acts as backdrop click-to-close) ── -->
+  <label class="side-overlay" for="panel-toggle" aria-label="Close menu"></label>
+
+  <!-- ── Side Panel ── -->
+  <aside class="side-panel">
+    <div class="side-panel-header">
       <div class="logo">
-        <div class="logo-icon">
-          <span class="material-symbols-outlined">eco</span>
-        </div>
+        <span class="material-symbols-outlined logo-icon">eco</span>
         <strong>GreenSweep</strong>
       </div>
+      <label class="icon-btn close-btn" for="panel-toggle" aria-label="Close menu">
+        <span class="material-symbols-outlined">close</span>
+      </label>
+    </div>
 
-      <nav>
+    <div class="side-panel-search">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" placeholder="Search…" />
+    </div>
+
+    <nav class="side-nav">
+      <a href="Home.html">
+        <span class="material-symbols-outlined">home</span>
+        <span>Home</span>
+      </a>
+      <a href="Awarness.html">
+        <span class="material-symbols-outlined">campaign</span>
+        <span>Awareness</span>
+      </a>
+      <a href="report.html" class="active">
+        <span class="material-symbols-outlined">report</span>
+        <span>Report</span>
+      </a>
+      <a href="Dashboard.html">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="Admin.html">
+        <span class="material-symbols-outlined">admin_panel_settings</span>
+        <span>Admin</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ── Top Bar ── -->
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <!-- Logo -->
+      <a href="Home.html" class="logo">
+        <span class="material-symbols-outlined logo-icon">eco</span>
+        <strong>GreenSweep</strong>
+      </a>
+
+      <!-- Desktop Nav — hidden below 880px -->
+      <nav class="desktop-nav">
         <a href="Home.html">Home</a>
         <a href="Awarness.html">Awareness</a>
         <a href="report.html" class="active">Report</a>
@@ -27,22 +75,44 @@
         <a href="Admin.html">Admin</a>
       </nav>
 
+      <!-- Mobile inline search bar — hidden above 880px, shown below -->
+      <div class="mobile-search-bar" id="mobileSearchBar">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search…" />
+      </div>
+
+      <!-- Right Controls -->
       <div class="nav-right">
-        <button class="icon-btn">
+
+        <!-- Search bar — desktop only, hidden below 880px -->
+        <div class="search-wrap">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input class="search-input" type="text" placeholder="Search…" />
+        </div>
+
+        <button class="icon-btn" aria-label="Notifications">
           <span class="material-symbols-outlined">notifications</span>
         </button>
+
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6M9pdCWIqio17-dlBNmxBwpm3VLSpnxLX1-PM4KaxIiWKbSJPmCanWqqKcNCHA-_kvPQf4EbPNPRKw7ghSnTDsDxDGfj2qDYz2IElca12MUoj__VZFWvglbaf-jSd9K2TJEpt4Ohxug85SXvJ7SqO1OQk1baHYGxJi9qwJiujVYLgBsPDVEeZCfFZ5hd9l83v4HJpBCBjdkzIbSBsiQruYR-JzbKObOTH_SptI989eHJR5Ic-UuFCU60Siu22fPwP6rYr4dxIiGi"
-          alt="User"
-          class="avatar"
+          alt="User" class="avatar"
         />
+
+        <!-- Hamburger — mobile only, shown below 880px -->
+        <label class="icon-btn mobile-only" for="panel-toggle" aria-label="Open menu">
+          <span class="material-symbols-outlined">menu</span>
+        </label>
+
       </div>
     </div>
+
   </header>
 
+  <!-- ── Main Content ── -->
   <main class="container">
 
-    <!-- Breadcrumbs -->
+    <!-- Breadcrumb -->
     <div class="breadcrumb">
       <a href="Home.html">Home</a>
       <span class="material-symbols-outlined tiny">chevron_right</span>
@@ -55,7 +125,7 @@
       <p>Help us keep GreenSweep beautiful by pinpointing waste locations and providing details for our cleanup crews.</p>
     </div>
 
-    <!-- Two-column layout -->
+    <!-- Report Grid -->
     <div class="report-grid">
 
       <!-- Left Column -->
@@ -85,10 +155,7 @@
 
           <div class="form-group">
             <label>Detailed Description</label>
-            <textarea
-              rows="5"
-              placeholder="Tell us more about the size, type, or accessibility of the dumping..."
-            ></textarea>
+            <textarea rows="5" placeholder="Tell us more about the size, type, or accessibility of the dumping..."></textarea>
           </div>
         </section>
 
@@ -126,12 +193,8 @@
           <p class="map-desc">Drag the pin to the exact location of the dumping site.</p>
 
           <div class="map-area">
-            <div
-              class="map-bg"
-              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1');"
-            ></div>
+            <div class="map-bg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYzbDBwsKae5ETx0w4Q6M4ZnLrPvX-w6vpaehGZO11LJi57hxi8BrWXuvYgDcGvaD_COGQOEPABJDXwnbgMoj96weFKyHJJK-VVSE7tt-10cSzUw09cb3fnkE0_lbD4Q86-POBMO3k0en7sElLTg-0wj75GOG4aLA-ROsKxAjrflyF3hyssUNldhutIvpmmc6Wn-sIaeLZ6aG_8K-uotsg-i1SbjC5y0SGbcLF_RbxjSHEc2hTL0K_E2nZL9kyRVRf4hB0QTs03wE1');"></div>
 
-            <!-- Pin Overlay -->
             <div class="map-pin-overlay">
               <div class="map-pin-label">
                 <p class="pin-label-top">Selected Location</p>
@@ -141,11 +204,10 @@
               <div class="pin-shadow"></div>
             </div>
 
-            <!-- Map Controls -->
             <div class="map-controls">
               <button class="map-ctrl-btn"><span class="material-symbols-outlined">add</span></button>
               <button class="map-ctrl-btn"><span class="material-symbols-outlined">remove</span></button>
-              <button class="map-ctrl-btn green"><span class="material-symbols-outlined">my_location</span></button>
+              <button class="map-ctrl-btn green-ctrl"><span class="material-symbols-outlined">my_location</span></button>
             </div>
           </div>
 
@@ -184,8 +246,6 @@
       </div>
       <p class="muted-sm">© 2026 GreenSweep Environmental Services. All rights reserved.</p>
     </div>
-
   </main>
-
 </body>
 </html>
