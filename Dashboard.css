@@ -70,7 +70,7 @@ a { text-decoration: none; color: inherit; }
 .sidenav-link:hover { background: #f5f8f7; }
 .sidenav-link.active { background: #0df269; font-weight: 600; }
 
-.btn-new-report {
+.report-from-admin {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   cursor: pointer;
 }
-.btn-new-report:hover { filter: brightness(0.95); }
+.report-from-admin:hover { filter: brightness(0.95); }
 
 /* ── Main Area ── */
 .main-area {
