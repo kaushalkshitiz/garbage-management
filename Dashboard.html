@@ -9,19 +9,25 @@
 </head>
 <body>
 
+  <!-- Sidebar toggle checkbox -->
+  <input type="checkbox" id="sidebarToggle" class="sidebar-checkbox" />
+  <!-- Overlay -->
+  <label for="sidebarToggle" class="sidebar-overlay"></label>
+
   <div class="layout">
 
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-top">
-        <div class="logo">
-          <div class="logo-icon">
-            <span class="material-symbols-outlined">eco</span>
-          </div>
-          <div>
+        <!-- Close button (mobile) -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+          <div class="logo">
+            <span class="material-symbols-outlined logo-icon">eco</span>
             <strong>GreenSweep</strong>
-            <small>Municipal Authority</small>
           </div>
+          <label for="sidebarToggle" class="sidebar-close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </label>
         </div>
 
         <nav class="sidenav">
@@ -54,6 +60,10 @@
       <!-- Top Header -->
       <header class="topbar">
         <div class="topbar-left">
+          <!-- Hamburger (mobile only) -->
+          <label for="sidebarToggle" class="hamburger-btn">
+            <span class="material-symbols-outlined" style="font-size:26px;">menu</span>
+          </label>
           <h2>Admin Dashboard</h2>
           <div class="search-box">
             <span class="material-symbols-outlined search-icon">search</span>

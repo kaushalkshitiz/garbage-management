@@ -19,9 +19,7 @@ a { text-decoration: none; color: #111814; }
 .material-symbols-outlined.big-icon { font-size: 40px; }
 .material-symbols-outlined.tiny     { font-size: 14px; }
 
-/* ════════════════════════════════════════
-   SIDEBAR — CSS checkbox hack (no JS)
-════════════════════════════════════════ */
+/*SIDEBAR — CSS checkbox */
 
 /* Hide the actual checkbox off-screen */
 .sidebar-checkbox {

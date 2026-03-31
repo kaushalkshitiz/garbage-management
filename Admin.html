@@ -9,35 +9,74 @@
 </head>
 <body>
 
+  <!-- ── Sidebar toggle (CSS checkbox hack) ── -->
+  <input type="checkbox" id="sidebarToggle" class="sidebar-checkbox" />
+
+  <!-- Overlay -->
+  <label for="sidebarToggle" class="sidebar-overlay"></label>
+
+  <!-- Sliding Side Panel -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="material-symbols-outlined logo-icon">eco</span>
+        <strong>GreenSweep Admin</strong>
+      </div>
+      <label for="sidebarToggle" class="sidebar-close">
+        <span class="material-symbols-outlined">close</span>
+      </label>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="Home.html">Home</a>
+      <a href="Awarness.html">Awareness</a>
+      <a href="report.html">Report</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="Admin.html" class="active">Admin</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="btn-primary sidebar-signin">Admin Profile</button>
+    </div>
+  </div>
+
   <!-- Top Navigation -->
   <header class="topbar">
-    <div class="topbar-inner">
-      <div class="topbar-left">
-        <div class="logo">
-          <span class="material-symbols-outlined logo-icon">eco</span>
-          <strong>GreenSweep Admin</strong>
-        </div>
-        <nav>
-          <a href="Home.html">Home</a>
-          <a href="Awarness.html">Awareness</a>
-          <a href="report.html">Report</a>
-          <a href="Dashboard.html">Dashboard</a>
-          <a href="Admin.html" class="active">Admin</a>
-        </nav>
+    <div class="topbar-left">
+      <div class="logo">
+        <span class="material-symbols-outlined logo-icon">eco</span>
+        <strong>GreenSweep Admin</strong>
       </div>
+      <nav class="desktop-nav">
+        <a href="Home.html">Home</a>
+        <a href="Awarness.html">Awareness</a>
+        <a href="report.html">Report</a>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="Admin.html" class="active">Admin</a>
+      </nav>
+    </div>
 
-      <div class="topbar-right">
-        <div class="search-box">
-          <span class="material-symbols-outlined search-icon">search</span>
-          <input type="text" placeholder="Search ID or Location" />
-        </div>
-        <button class="btn-primary">Admin Profile</button>
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbtvSeXin6RjA1KqSDzdEmrWJU83Tn0WRSQyYehA15LDl4zl6gN7vuRg0m3MVuTjdx4XeUVNNyVOQAdtWj_5omeFLy7JcSFMrEfTL77-jWs_8DVZGMTe4SG1nRXm6V9Wu5h4FnR15pEm1ddpfqxS4GDkWW2yIHmpFjXAdLAo3sOB9zKfTolB-3hv8G8AOit2T6PjAmgYq4hmBrs74aRQFrpZ8y0x4lPMusguq_JgZG_TcVqjc8Cd4E_KGwrH8i1MYpB-py3KGvNMO"
-          alt="Admin"
-          class="avatar"
-        />
+    <!-- Desktop right -->
+    <div class="topbar-right desktop-right">
+      <div class="search-box">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search ID or Location" />
       </div>
+      <button class="btn-primary">Admin Profile</button>
+      <img
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6M9pdCWIqio17-dlBNmxBwpm3VLSpnxLX1-PM4KaxIiWKbSJPmCanWqqKcNCHA-_kvPQf4EbPNPRKw7ghSnTDsDxDGfj2qDYz2IElca12MUoj__VZFWvglbaf-jSd9K2TJEpt4Ohxug85SXvJ7SqO1OQk1baHYGxJi9qwJiujVYLgBsPDVEeZCfFZ5hd9l83v4HJpBCBjdkzIbSBsiQruYR-JzbKObOTH_SptI989eHJR5Ic-UuFCU60Siu22fPwP6rYr4dxIiGi"
+        alt="Admin"
+        class="avatar"
+      />
+    </div>
+
+    <!-- Mobile: search + hamburger label -->
+    <div class="topbar-mobile-right">
+      <div class="search-box mobile-search">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search ID or Location" />
+      </div>
+      <label for="sidebarToggle" class="hamburger">
+        <span class="material-symbols-outlined">menu</span>
+      </label>
     </div>
   </header>
 

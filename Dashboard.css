@@ -18,6 +18,28 @@ a { text-decoration: none; color: inherit; }
 }
 .material-symbols-outlined.small { font-size: 15px; }
 
+/* ── Sidebar Checkbox (CSS-only slide-in from LEFT) ── */
+.sidebar-checkbox {
+  position: fixed;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 300;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.sidebar-checkbox:checked ~ .sidebar-overlay {
+  display: block;
+}
+
 /* ── Layout ── */
 .layout {
   display: flex;
@@ -36,24 +58,73 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   padding: 20px 12px;
 }
+
+/* ── Sidebar Close Button (inside sidebar, mobile only) ── */
+.sidebar-close-btn {
+  display: none; /* hidden on desktop */
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  align-items: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.sidebar-close-btn .material-symbols-outlined {
+  font-size: 22px;
+  color: #608a71;
+}
+.sidebar-close-btn:hover { background: #f0f5f2; }
+
+/* ── Hamburger Button (topbar, mobile only) ── */
+.hamburger-btn {
+  display: none; /* hidden on desktop */
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 4px;
+  transition: background 0.15s;
+}
+.hamburger-btn:hover { background: #e8efeb; }
+
+/* Mobile: sidebar slides in from LEFT */
+@media (max-width: 860px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    z-index: 400;
+    transform: translateX(-100%);
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 8px 0 32px rgba(0,0,0,0.12);
+  }
+  .sidebar-checkbox:checked ~ .sidebar-overlay { display: block; }
+  .sidebar-checkbox:checked ~ .layout .sidebar {
+    transform: translateX(0);
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .sidebar-close-btn {
+    display: flex;
+  }
+}
 .sidebar-top { display: flex; flex-direction: column; gap: 24px; }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 6px;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 .logo-icon {
-  background: #0df269;
-  border-radius: 8px;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #0df269;
+  font-size: 28px;
 }
-.logo strong { display: block; font-size: 14px; }
-.logo small  { display: block; font-size: 11px; color: #608a71; }
 
 .sidenav { display: flex; flex-direction: column; gap: 4px; }
 .sidenav-link {
@@ -210,6 +281,17 @@ a { text-decoration: none; color: inherit; }
   flex-direction: column;
   gap: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1),
+              box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(13,242,105,0.18), 0 2px 8px rgba(0,0,0,0.08);
+  border-color: #0df269;
+}
+.stat-card:active {
+  transform: translateY(-2px) scale(0.99);
 }
 .stat-card-top {
   display: flex;

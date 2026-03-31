@@ -9,64 +9,42 @@
 </head>
 <body>
 
-  <!-- ──  side panel toggle ── -->
-  <input type="checkbox" id="panel-toggle" class="panel-toggle-input" />
+  <!-- ── Sidebar toggle (CSS checkbox hack) ── -->
+  <input type="checkbox" id="sidebarToggle" class="sidebar-checkbox" />
 
-  <!-- ── Side Panel Overlay (acts as backdrop click-to-close) ── -->
-  <label class="side-overlay" for="panel-toggle" aria-label="Close menu"></label>
+  <!-- Overlay -->
+  <label for="sidebarToggle" class="sidebar-overlay"></label>
 
-  <!-- ── Side Panel ── -->
-  <aside class="side-panel">
-    <div class="side-panel-header">
+  <!-- Sliding Side Panel -->
+  <div class="sidebar">
+    <div class="sidebar-header">
       <div class="logo">
         <span class="material-symbols-outlined logo-icon">eco</span>
         <strong>GreenSweep</strong>
       </div>
-      <label class="icon-btn close-btn" for="panel-toggle" aria-label="Close menu">
+      <label for="sidebarToggle" class="sidebar-close">
         <span class="material-symbols-outlined">close</span>
       </label>
     </div>
-
-    <div class="side-panel-search">
-      <span class="material-symbols-outlined">search</span>
-      <input type="text" placeholder="Search…" />
-    </div>
-
-    <nav class="side-nav">
-      <a href="Home.html">
-        <span class="material-symbols-outlined">home</span>
-        <span>Home</span>
-      </a>
-      <a href="Awarness.html">
-        <span class="material-symbols-outlined">campaign</span>
-        <span>Awareness</span>
-      </a>
-      <a href="report.html" class="active">
-        <span class="material-symbols-outlined">report</span>
-        <span>Report</span>
-      </a>
-      <a href="Dashboard.html">
-        <span class="material-symbols-outlined">dashboard</span>
-        <span>Dashboard</span>
-      </a>
-      <a href="Admin.html">
-        <span class="material-symbols-outlined">admin_panel_settings</span>
-        <span>Admin</span>
-      </a>
+    <nav class="sidebar-nav">
+      <a href="Home.html">Home</a>
+      <a href="Awarness.html">Awareness</a>
+      <a href="report.html" class="active">Report</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="Admin.html">Admin</a>
     </nav>
-  </aside>
+    <div class="sidebar-bottom">
+      <button class="btn-primary sidebar-signin">Sign In</button>
+    </div>
+  </div>
 
   <!-- ── Top Bar ── -->
   <header class="topbar">
-    <div class="topbar-inner">
-
-      <!-- Logo -->
+    <div class="topbar-left">
       <a href="Home.html" class="logo">
         <span class="material-symbols-outlined logo-icon">eco</span>
         <strong>GreenSweep</strong>
       </a>
-
-      <!-- Desktop Nav — hidden below 880px -->
       <nav class="desktop-nav">
         <a href="Home.html">Home</a>
         <a href="Awarness.html">Awareness</a>
@@ -74,39 +52,33 @@
         <a href="Dashboard.html">Dashboard</a>
         <a href="Admin.html">Admin</a>
       </nav>
+    </div>
 
-      <!-- Mobile inline search bar — hidden above 880px, shown below -->
-      <div class="mobile-search-bar" id="mobileSearchBar">
+    <!-- Desktop right -->
+    <div class="topbar-right desktop-right">
+      <div class="search-box">
         <span class="material-symbols-outlined search-icon">search</span>
         <input type="text" placeholder="Search…" />
       </div>
-
-      <!-- Right Controls -->
-      <div class="nav-right">
-
-        <!-- Search bar — desktop only, hidden below 880px -->
-        <div class="search-wrap">
-          <span class="material-symbols-outlined search-icon">search</span>
-          <input class="search-input" type="text" placeholder="Search…" />
-        </div>
-
-        <button class="icon-btn" aria-label="Notifications">
-          <span class="material-symbols-outlined">notifications</span>
-        </button>
-
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6M9pdCWIqio17-dlBNmxBwpm3VLSpnxLX1-PM4KaxIiWKbSJPmCanWqqKcNCHA-_kvPQf4EbPNPRKw7ghSnTDsDxDGfj2qDYz2IElca12MUoj__VZFWvglbaf-jSd9K2TJEpt4Ohxug85SXvJ7SqO1OQk1baHYGxJi9qwJiujVYLgBsPDVEeZCfFZ5hd9l83v4HJpBCBjdkzIbSBsiQruYR-JzbKObOTH_SptI989eHJR5Ic-UuFCU60Siu22fPwP6rYr4dxIiGi"
-          alt="User" class="avatar"
-        />
-
-        <!-- Hamburger — mobile only, shown below 880px -->
-        <label class="icon-btn mobile-only" for="panel-toggle" aria-label="Open menu">
-          <span class="material-symbols-outlined">menu</span>
-        </label>
-
-      </div>
+      <button class="icon-btn" aria-label="Notifications">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <img
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6M9pdCWIqio17-dlBNmxBwpm3VLSpnxLX1-PM4KaxIiWKbSJPmCanWqqKcNCHA-_kvPQf4EbPNPRKw7ghSnTDsDxDGfj2qDYz2IElca12MUoj__VZFWvglbaf-jSd9K2TJEpt4Ohxug85SXvJ7SqO1OQk1baHYGxJi9qwJiujVYLgBsPDVEeZCfFZ5hd9l83v4HJpBCBjdkzIbSBsiQruYR-JzbKObOTH_SptI989eHJR5Ic-UuFCU60Siu22fPwP6rYr4dxIiGi"
+        alt="User" class="avatar"
+      />
     </div>
 
+    <!-- Mobile: search + hamburger label -->
+    <div class="topbar-mobile-right">
+      <div class="search-box mobile-search">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search…" />
+      </div>
+      <label for="sidebarToggle" class="hamburger">
+        <span class="material-symbols-outlined">menu</span>
+      </label>
+    </div>
   </header>
 
   <!-- ── Main Content ── -->

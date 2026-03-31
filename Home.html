@@ -9,28 +9,69 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="topbar">
-    <div class="topbar-inner">
+  <!-- ── Sidebar toggle (CSS checkbox hack) ── -->
+  <input type="checkbox" id="sidebarToggle" class="sidebar-checkbox" />
+
+  <!-- Overlay -->
+  <label for="sidebarToggle" class="sidebar-overlay"></label>
+
+  <!-- Sliding Side Panel -->
+  <div class="sidebar">
+    <div class="sidebar-header">
       <div class="logo">
-        <div class="logo-icon">
-          <span class="material-symbols-outlined">eco</span>
-        </div>
+        <span class="material-symbols-outlined logo-icon">eco</span>
         <strong>GreenSweep</strong>
       </div>
+      <label for="sidebarToggle" class="sidebar-close">
+        <span class="material-symbols-outlined">close</span>
+      </label>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="Home.html" class="active">Home</a>
+      <a href="Awarness.html">Awareness</a>
+      <a href="report.html">Report</a>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="Admin.html">Admin</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="btn-primary sidebar-signin">Sign Up</button>
+    </div>
+  </div>
 
-      <nav class="main-nav">
+  <!-- Navigation -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">
+        <span class="material-symbols-outlined logo-icon">eco</span>
+        <strong>GreenSweep</strong>
+      </div>
+      <nav class="desktop-nav">
         <a href="Home.html" class="active">Home</a>
         <a href="Awarness.html">Awareness</a>
         <a href="report.html">Report</a>
         <a href="Dashboard.html">Dashboard</a>
         <a href="Admin.html">Admin</a>
       </nav>
+    </div>
 
-      <div class="nav-actions">
-        <button class="btn-secondary">Log In</button>
-        <a href="report.html" class="btn-primary">Report Now →</a>
+    <!-- Desktop right -->
+    <div class="topbar-right desktop-right">
+      <div class="search-box">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search topics..." />
       </div>
+      <button class="btn-primary">Sign Up</button>
+    </div>
+
+    <!-- Mobile: search + hamburger label -->
+    <div class="topbar-mobile-right">
+      <div class="search-box mobile-search">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" placeholder="Search topics..." />
+      </div>
+      <label for="sidebarToggle" class="hamburger">
+        <span class="material-symbols-outlined">menu</span>
+      </label>
     </div>
   </header>
 
